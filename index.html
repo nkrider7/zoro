@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoravar</title>
+  <meta name="description" content="Zoravar - Published with SoulSpace">
+  <meta property="og:title" content="Zoravar">
+  <meta property="og:type" content="article">
+  <meta name="generator" content="SoulSpace GitHub Pages Engine">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Early theme boot script to completely eliminate theme flashing -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("soulspace.theme") || localStorage.getItem("soulspace-theme");
+        var cfgTheme = "dark";
+        var theme = saved || (cfgTheme !== "system" ? cfgTheme : "system");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var isDark = theme === "dark" || (theme === "system" && prefersDark);
+        if (isDark) {
+          document.documentElement.classList.add("dark");
+          document.documentElement.style.colorScheme = "dark";
+        } else {
+          document.documentElement.classList.remove("dark");
+          document.documentElement.style.colorScheme = "light";
+        }
+      } catch (_) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Prism.js Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
+
+  <style>
+    :root {
+      --bg-main: #faf9f5;
+      --bg-sidebar: #f5f4ee;
+      --bg-card: #ffffff;
+      --bg-muted: #f0eee6;
+      --bg-accent: #eae8df;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-subtle: rgba(0, 0, 0, 0.04);
+      --text-main: #191917;
+      --text-muted: #6f6e69;
+      --text-dim: #9b9a95;
+      --primary-color: #6366f1;
+    }
+
+    html.dark {
+      --bg-main: #151515;
+      --bg-sidebar: #181818;
+      --bg-card: #1f1f1f;
+      --bg-muted: #242424;
+      --bg-accent: #2a2a2a;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.04);
+      --text-main: #ededed;
+      --text-muted: #949494;
+      --text-dim: #666666;
+      --primary-color: #818cf8;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    pre[class*="language-"] { background: transparent !important; margin: 0 !important; padding: 0 !important; }
+
+    /* Custom scrollbars */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(150, 150, 150, 0.25) transparent;
+    }
+
+    /* Active TOC item highlight */
+    .active-toc {
+      background-color: rgba(99, 102, 241, 0.12) !important;
+      color: #6366f1 !important;
+      font-weight: 600 !important;
+    }
+    html.dark .active-toc {
+      color: #818cf8 !important;
+      background-color: rgba(129, 140, 248, 0.15) !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex antialiased transition-colors duration-150 overflow-x-hidden font-sans relative">
+
+  <!-- Floating Corner Sidebar Open Button (When Sidebar Collapsed on Desktop) -->
+  
+
+  <!-- Mobile Backdrop Overlay -->
+  
+
+  <!-- Left Guest Sidebar: Slide-over Drawer on Mobile (<md), Sticky Column on Desktop (>=md) -->
+  
+
+  <!-- Main Canvas Area -->
+  <div class="flex-1 flex flex-col min-w-0 min-h-screen overflow-y-auto w-full">
+    
+    <!-- Top Sticky Header Bar (Exact Image 1 Public Page Match) -->
+    <header class="sticky top-0 z-20 border-b border-[var(--border-color)] bg-[var(--bg-main)]/85 backdrop-blur-md px-3 sm:px-6 h-12 flex items-center justify-between gap-2 select-none">
+      <div class="flex items-center gap-2 min-w-0 flex-1">
+        
+          <div class="flex items-center gap-2">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center">
+              <svg class="h-8 w-8" viewBox="0 0 512 512" fill="none" role="img" aria-label="SoulSpace Logo">
+  <defs>
+    <linearGradient id="ghost-ring" x1="-201" y1="0" x2="201" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="35%" stop-color="#4F46E5" />
+      <stop offset="70%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#C026D3" />
+    </linearGradient>
+    <path id="ghost-ring-shape" fill-rule="evenodd" d="M -201 0 A 201 55.5 0 1 0 201 0 A 201 55.5 0 1 0 -201 0 Z M -164 -5.5 A 163.5 35.5 0 1 1 163 -5.5 A 163.5 35.5 0 1 1 -164 -5.5 Z" />
+    <clipPath id="ghost-ring-clip">
+      <rect x="-145" y="10" width="290" height="90" />
+    </clipPath>
+  </defs>
+  <g transform="translate(256 258) scale(1.14) translate(-256 -258)">
+    <g transform="translate(257.5 266) rotate(-15.6)">
+      <use href="#ghost-ring-shape" fill="url(#ghost-ring)" />
+    </g>
+    <path fill="#FFFFFF" d="M 244.5 126.5 C 305.5 119.5, 353.5 162.0, 360.5 223.0 L 376.2 332.5 C 378.8 352.5, 365.5 367.2, 347.5 368.8 C 332.2 370.2, 319.8 359.5, 312.8 349.0 C 309.5 344.2, 305.2 344.8, 303.2 350.0 C 297.2 365.8, 282.5 380.2, 263.0 382.0 C 243.5 383.8, 227.5 371.5, 220.2 358.0 C 217.5 353.0, 213.2 353.5, 210.8 358.8 C 204.8 372.0, 193.5 385.0, 177.5 386.5 C 159.5 388.2, 148.2 373.8, 146.5 354.0 L 139.2 248.5 C 134.5 186.5, 183.5 133.5, 244.5 126.5 Z" />
+    <circle cx="205.8" cy="239.1" r="28.6" fill="#090514" />
+    <circle cx="295.4" cy="227.8" r="28.6" fill="#090514" />
+    <g transform="translate(257.5 266) rotate(-15.6)" clip-path="url(#ghost-ring-clip)">
+      <use href="#ghost-ring-shape" fill="url(#ghost-ring)" />
+    </g>
+    <path fill="#FFFFFF" d="M 373.2 112.5 C 375.2 132.8, 381.4 139.0, 401.7 143.9 C 381.4 148.8, 375.2 155.0, 373.2 175.3 C 371.2 155.0, 365.0 148.8, 344.7 143.9 C 365.0 139.0, 371.2 132.8, 373.2 112.5 Z" />
+  </g>
+</svg>
+            </div>
+            
+          </div>
+        
+
+        
+
+        <div class="flex items-center gap-1.5 min-w-0 truncate">
+          <div class="h-4 w-4 shrink-0 flex items-center justify-center text-xs">
+            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376646/onepiece-49.webp" class="h-3.5 w-3.5 rounded-xs object-cover" />
+          </div>
+          <span class="text-xs font-semibold text-[var(--text-main)] truncate">Zoravar</span>
+        </div>
+
+        <span class="rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 px-1.5 py-0.5 text-[10px] font-medium tracking-wide shrink-0 hidden sm:inline">
+          Pages
+        </span>
+      </div>
+
+      <div class="flex items-center gap-1.5 shrink-0">
+        <!-- Page Width Toggle Button (Standard / Wide / Full) -->
+        <button id="page-width-btn" onclick="cyclePageWidth()" class="h-8 w-8 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-[var(--bg-accent)] text-xs font-medium flex items-center justify-center transition-colors cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)]" title="Page width (Standard / Wide / Full)">
+          <span id="page-width-icon">
+            <i data-lucide="fold-horizontal" class="h-3.5 w-3.5"></i>
+          </span>
+        </button>
+
+        <button onclick="toggleTheme()" class="h-8 w-8 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-[var(--bg-accent)] text-xs font-medium flex items-center justify-center transition-colors cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)]" title="Toggle theme">
+          <span class="theme-icon-container">
+            <i data-lucide="moon" class="h-3.5 w-3.5"></i>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Floating Notion-Style Table of Contents (Right Edge Indicator & Hover Outline) -->
+    
+      <div id="floating-toc-root" class="fixed right-3 sm:right-6 top-24 z-30 flex flex-row-reverse items-start select-none group pointer-events-auto">
+        <!-- 1. Sleek Vertical Dashes Indicator (Right edge) -->
+        <div id="floating-toc-dashes" class="flex flex-col items-end gap-1.5 py-2 px-1.5 cursor-pointer rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors" title="Table of contents" onclick="toggleFloatingToc()">
+          <div data-toc-dash="heading-0-the-world-of-one-piece" onclick="event.stopPropagation(); scrollToHeading('heading-0-the-world-of-one-piece')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-4 h-[3px] bg-black dark:bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)] scale-x-110 opacity-100"></div><div data-toc-dash="heading-7-the-seven-legendary-sword-regions" onclick="event.stopPropagation(); scrollToHeading('heading-7-the-seven-legendary-sword-regions')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-16-2-legendary-character-roronoa-zoro" onclick="event.stopPropagation(); scrollToHeading('heading-16-2-legendary-character-roronoa-zoro')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-24-character-profile" onclick="event.stopPropagation(); scrollToHeading('heading-24-character-profile')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-26-his-legendary-swords" onclick="event.stopPropagation(); scrollToHeading('heading-26-his-legendary-swords')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-36-his-legendary-techniques" onclick="event.stopPropagation(); scrollToHeading('heading-36-his-legendary-techniques')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-49-his-haki-mastery" onclick="event.stopPropagation(); scrollToHeading('heading-49-his-haki-mastery')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-53-why-zoro-is-so-powerful" onclick="event.stopPropagation(); scrollToHeading('heading-53-why-zoro-is-so-powerful')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-60-3-an-original-story-the-swordsman-s-last-promise" onclick="event.stopPropagation(); scrollToHeading('heading-60-3-an-original-story-the-swordsman-s-last-promise')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-83-4-zoro-s-swordsmanship-power-system" onclick="event.stopPropagation(); scrollToHeading('heading-83-4-zoro-s-swordsmanship-power-system')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-85-five-levels-of-swordsmanship" onclick="event.stopPropagation(); scrollToHeading('heading-85-five-levels-of-swordsmanship')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-101-zoro-s-core-attributes" onclick="event.stopPropagation(); scrollToHeading('heading-101-zoro-s-core-attributes')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-103-5-the-zoro-training-philosophy" onclick="event.stopPropagation(); scrollToHeading('heading-103-5-the-zoro-training-philosophy')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-105-his-daily-training-mindset" onclick="event.stopPropagation(); scrollToHeading('heading-105-his-daily-training-mindset')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-112-the-five-rules-of-zoro" onclick="event.stopPropagation(); scrollToHeading('heading-112-the-five-rules-of-zoro')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-118-6-my-zoro-world-building-checklist" onclick="event.stopPropagation(); scrollToHeading('heading-118-6-my-zoro-world-building-checklist')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-130-7-legendary-quotes-philosophy" onclick="event.stopPropagation(); scrollToHeading('heading-130-7-legendary-quotes-philosophy')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-139-final-thoughts" onclick="event.stopPropagation(); scrollToHeading('heading-139-final-thoughts')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div>
+        </div>
+
+        <!-- 2. Notion-style Expanded Outline Card -->
+        <div id="floating-toc-card" class="mr-2 hidden flex-col rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)]/95 backdrop-blur-md shadow-2xl p-2.5 min-w-[220px] max-w-[300px] max-h-[65vh] overflow-hidden transition-all duration-200 origin-top-right">
+          <div class="flex items-center justify-between px-2 py-1 mb-1 border-b border-[var(--border-color)] text-[10px] font-semibold text-[var(--text-dim)] uppercase tracking-wider">
+            <span>Table of Contents</span>
+            <button id="floating-toc-pin" type="button" onclick="togglePinFloatingToc(event)" class="inline-flex h-5 w-5 items-center justify-center rounded text-[var(--text-muted)] hover:bg-[var(--bg-accent)] hover:text-[var(--text-main)] cursor-pointer" title="Pin open">
+              <i data-lucide="pin" class="h-3 w-3"></i>
+            </button>
+          </div>
+          <div id="floating-toc-list" class="flex-1 overflow-y-auto space-y-0.5 py-0.5 max-h-[50vh] pr-1">
+            
+              <button data-toc-id="heading-0-the-world-of-one-piece" onclick="scrollToHeading('heading-0-the-world-of-one-piece')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 font-medium text-[var(--text-main)]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">⚔️ The World of One Piece</span>
+              </button>
+            
+              <button data-toc-id="heading-7-the-seven-legendary-sword-regions" onclick="scrollToHeading('heading-7-the-seven-legendary-sword-regions')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🌍 The Seven Legendary Sword Regions</span>
+              </button>
+            
+              <button data-toc-id="heading-16-2-legendary-character-roronoa-zoro" onclick="scrollToHeading('heading-16-2-legendary-character-roronoa-zoro')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">👑 2. Legendary Character: Roronoa Zoro</span>
+              </button>
+            
+              <button data-toc-id="heading-24-character-profile" onclick="scrollToHeading('heading-24-character-profile')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">⚔️ Character Profile</span>
+              </button>
+            
+              <button data-toc-id="heading-26-his-legendary-swords" onclick="scrollToHeading('heading-26-his-legendary-swords')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">💚 His Legendary Swords</span>
+              </button>
+            
+              <button data-toc-id="heading-36-his-legendary-techniques" onclick="scrollToHeading('heading-36-his-legendary-techniques')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🔥 His Legendary Techniques</span>
+              </button>
+            
+              <button data-toc-id="heading-49-his-haki-mastery" onclick="scrollToHeading('heading-49-his-haki-mastery')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">👑 His Haki Mastery</span>
+              </button>
+            
+              <button data-toc-id="heading-53-why-zoro-is-so-powerful" onclick="scrollToHeading('heading-53-why-zoro-is-so-powerful')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">💎 Why Zoro Is So Powerful</span>
+              </button>
+            
+              <button data-toc-id="heading-60-3-an-original-story-the-swordsman-s-last-promise" onclick="scrollToHeading('heading-60-3-an-original-story-the-swordsman-s-last-promise')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">📖 3. An Original Story: The Swordsman&#039;s Last Promise</span>
+              </button>
+            
+              <button data-toc-id="heading-83-4-zoro-s-swordsmanship-power-system" onclick="scrollToHeading('heading-83-4-zoro-s-swordsmanship-power-system')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">⚔️ 4. Zoro&#039;s Swordsmanship Power System</span>
+              </button>
+            
+              <button data-toc-id="heading-85-five-levels-of-swordsmanship" onclick="scrollToHeading('heading-85-five-levels-of-swordsmanship')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">Five Levels of Swordsmanship</span>
+              </button>
+            
+              <button data-toc-id="heading-101-zoro-s-core-attributes" onclick="scrollToHeading('heading-101-zoro-s-core-attributes')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🧬 Zoro&#039;s Core Attributes</span>
+              </button>
+            
+              <button data-toc-id="heading-103-5-the-zoro-training-philosophy" onclick="scrollToHeading('heading-103-5-the-zoro-training-philosophy')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🏋️ 5. The Zoro Training Philosophy</span>
+              </button>
+            
+              <button data-toc-id="heading-105-his-daily-training-mindset" onclick="scrollToHeading('heading-105-his-daily-training-mindset')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">His Daily Training Mindset</span>
+              </button>
+            
+              <button data-toc-id="heading-112-the-five-rules-of-zoro" onclick="scrollToHeading('heading-112-the-five-rules-of-zoro')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">The Five Rules of Zoro</span>
+              </button>
+            
+              <button data-toc-id="heading-118-6-my-zoro-world-building-checklist" onclick="scrollToHeading('heading-118-6-my-zoro-world-building-checklist')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🎯 6. My Zoro World-Building Checklist</span>
+              </button>
+            
+              <button data-toc-id="heading-130-7-legendary-quotes-philosophy" onclick="scrollToHeading('heading-130-7-legendary-quotes-philosophy')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">✨ 7. Legendary Quotes &amp; Philosophy</span>
+              </button>
+            
+              <button data-toc-id="heading-139-final-thoughts" onclick="scrollToHeading('heading-139-final-thoughts')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🌊 Final Thoughts</span>
+              </button>
+            
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- Note Cover Image Banner -->
+    
+      <div class="w-full h-44 sm:h-64 overflow-hidden relative select-none">
+        <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1792312516/Sunny_Cherry_Blossom_Shopping_Street.webp" alt="" class="w-full h-full object-cover" />
+      </div>
+    
+
+    <!-- Document Content Container with dynamic width class -->
+    <main id="main-document-container" class="max-w-4xl w-full mx-auto px-4 sm:px-12 py-6 sm:py-8 flex-1 transition-[max-width] duration-200 ease-out">
+      
+      <!-- Floating Icon Overlapping Banner -->
+      <div class="-mt-12 sm:-mt-16 mb-4 relative z-10">
+        <div class="h-14 w-14 sm:h-20 sm:w-20 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-xl flex items-center justify-center text-2xl sm:text-4xl overflow-hidden select-none">
+          <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376646/onepiece-49.webp" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Title & Metadata -->
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-main)] mb-3">
+        Zoravar
+      </h1>
+      
+      
+        <div class="border-b border-[var(--border-color)] mb-8"></div>
+      
+
+      <!-- Article Body -->
+      <article class="space-y-2 text-[var(--text-main)] text-sm sm:text-base leading-relaxed">
+        <h1 id="heading-0-the-world-of-one-piece" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>⚔️ The World of One Piece</span>
+          <a href="#heading-0-the-world-of-one-piece" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h1>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">The Journey of Roronoa Zoro, The World&#039;s Greatest Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Welcome to a world where swords decide destinies, warriors are born through endless battles, and an unbreakable promise drives one swordsman toward the greatest title in the world.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A  Youtube botton here world where strength is earned through discipline, loyalty is stronger than fear, and every scar tells a story.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ 1. The Legend of the Three-Sword Style</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Imagine a world where legendary swordsmen travel across dangerous oceans, searching for powerful blades, challenging mighty warriors, and protecting the dreams of those they believe in.</p>
+<h3 id="heading-7-the-seven-legendary-sword-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🌍 The Seven Legendary Sword Regions</span>
+          <a href="#heading-7-the-seven-legendary-sword-regions" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>🏯 Wano Country – A land of samurai, ancient traditions, and legendary swordsmiths.</li>
+<li>🌋 Blazing Forge Island – A volcanic island where the world&#039;s strongest swords are created.</li>
+<li>❄️ Frostfang Mountains – A frozen battlefield where warriors test their endurance.</li>
+<li>🌸 Sakura Province – A peaceful region hiding the graves of legendary samurai.</li>
+<li>🌑 Shadowblade Territory – A mysterious kingdom ruled by merciless swordsmen.</li>
+<li>⚡ Thunder Peak – A dangerous mountain where warriors train their speed and reflexes.</li>
+<li>🏴‍☠️ Grand Line – An unpredictable ocean where the world&#039;s greatest fighters compete for glory.</li>
+</ul>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Every region has its own sword traditions, legendary masters, ancient weapons, and forgotten fighting techniques.</p>
+<h2 id="heading-16-2-legendary-character-roronoa-zoro" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>👑 2. Legendary Character: Roronoa Zoro</span>
+          <a href="#heading-16-2-legendary-character-roronoa-zoro" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Discipline, loyalty, determination, and overwhelming swordsmanship.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/QYf96n4PjMljiwWDDUL9f86dqadxC9aeRtrhjEbdahAWvdRU5XJ0qyJwBPzrM9_Pfxgyc3lZsYAPY6E4oTyINvrSwWlBb-kK_bnwSsu7iaP3JFrA3gbr8KWkDXvVu8kyNZm1XytW1Dp19weFS94uPdM1-4HZSjJzHWjspQy2yP4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: perché quel combattimento sta impegnando Zoro così a lungo?</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/LrXMkTtDSmkqQ-9DvUBr7qICR3VP7UPdFAMyEHEFu_sSurBua9b_hknpqzRolygUktLHBV-NoYfdifwcoMlQBfKNxhEJadgKd6oJo8o2sQRP6mMCEEnLGFGlu7bASbDUGXwCGOqhJzhUQxnisZvuWf_ETCBT65XT6ehLVQQXjaw?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Steam Workshop::ZORO KING OF HELL one piece HD</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/WnsqDrOR1sJP-mJtUkg2o8ys0uOXtPxsjLEvR3lFIw1qq6v4tyb4DET0uyWRnS8L8L3Ian1uT0k1UwtpCxxubMfpy6E2bCwNIkTFw6OJpV2Op5Ig2FBQfQkoUd7D7xNKh0KuS8QfM2HOp4jWX-N-5CesGhmg_BIEzSJ7dPL2sPo?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro les regaló a los fans de &#039;One Piece&#039; la pelea más espectacular del anime | Entretenimiento Cine y Series | Univision</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">10</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Roronoa Zoro is one of the most powerful and determined swordsmen in the One Piece universe.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">His dream is simple but almost impossible: become the World&#039;s Greatest Swordsman.</p>
+<h3 id="heading-24-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>⚔️ Character Profile</span>
+          <a href="#heading-24-character-profile" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<h3 id="heading-26-his-legendary-swords" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>💚 His Legendary Swords</span>
+          <a href="#heading-26-his-legendary-swords" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/192CAnT71UHFPqpbRB8PVyR-ReGYaK6CW8xIYemxzfiIHtt12obrmiKFgjMf8QscUjACeQsCdH93juwUc6dt3VqacxK7SFR3Srfhe8cV4eoXipWl_iYR4VcEoDHeA8FobSi-I-pwwTpGyMDqCHMVK6CPPHk0IyllrPZU99f2wxI?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">1095 High Carbon Steel White One Piece Roronoa Zoro&#039;s Wado Ichimonji Katana Sword | COOLKATANA</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">1. Wado Ichimonji</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A precious sword connected to Zoro&#039;s childhood promise to Kuina. It represents his dream and determination.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/55ifg7cZafr5eBS1itGIQATgdTfPvQ6plmDH8wJV1i0XpNYU_olVZ8obhUIUvFHum0sz_cP1dgyZV2OYVAgtvNDNUbgkidQe9VChV3GH6lJBQFbAzoCs1VFU-e-TiqaaKaG8DzPEWYZQCem0H_91dVV_yb01S7gYOoY5kg_wxts?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Enma | Katana</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">2. Enma</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A legendary blade that draws out its wielder&#039;s Haki and demands extraordinary control.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/HfbZK3boDi8G4Dlxlic7-ftJQKruwewON2LZLA4D4nY40-3x08htenlDHY0s5GYRXqJYzBYOERRjetcis9TPkxkofYb3_qxL4Vk9HHy1ICJF7_exCSFqkFpPtVYBjJMabt-VrJYy688suqJ4AsG2V3gISvnyGguaJIyKQjZdc7E?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro Sword | Roronoa Zoro Sandai Kitetsu - One Piece Cursed Sword Replica, 1045 Carbon Steel, Red Saya - TrueKatana</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">3. Sandai Kitetsu</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A cursed sword with a dangerous reputation, chosen by Zoro despite its deadly history.</p>
+<h3 id="heading-36-his-legendary-techniques" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🔥 His Legendary Techniques</span>
+          <a href="#heading-36-his-legendary-techniques" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/t6Udnqhp8v0rsA00fd3KFBr7a2IXrecwbvD5eXG4afJRB2Fm2z-FNBIBTBc-p2Tujb2nGDidQNLGhYEBmt8nmrwsKmzBmzRm0hy2O9B80KY9a76P4jVTdZpR34Qt0ffTNE3wmzB277tIDHW0n5gDLK-J_RsUGRAgcfQ-DUFdaEk?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Le tecniche di spada più potenti di Roronoa Zoro in One Piece</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">1. Oni Giri</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A signature three-sword technique delivering a powerful cross-shaped slash.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/eJuGfhhbpqFZybmDgbzPaGe6ErKTiIIpYb_d4NOEvEkQhU_W0LJgPL3SggmTLXZtwlolsrHCIHOtJhwWeUTq05UNoYvzHjzuJuqDmWcQDxeXs_9bk4aX5wCVu099trndfQc8pz1IV5eyuO82quCgHkpdVBtPFQAJt5kQYuSABYQ?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">索隆是怎么变成九刀流的，有多猛-百度经验</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">2. Asura</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious technique that creates the appearance of a nine-sword, three-headed warrior.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/655CPk4-4qXtV5eR7odVzR9i4umX-vxvOMBl2pjSq_Rk2UFABCjnFizxYixsK2_QSbd_BQAo-vgVfDqNhp4HvUUdSvLBiYwj-TIE5Y1HyWXO4A2KNEvcKKY2cQqW8hfBVU67h4yewJVBoGUlj6bJG9HVxNgW10YZQWjha7jnJnE?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Los 10 ataques más poderosos en One Piece (hasta ahora) | Cultture</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">3. King of Hell: Three-Sword Serpent</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">An advanced fighting style combining powerful swordsmanship with Conqueror&#039;s Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/sK-JzbjWS7BMg3k9yCz9JQicJhio-ed6PZRsKpOmoSO3GLCysg1WjG1y5x_D2AGpqJFTSUHGWyLOy0Me7koaQx7lFWZ6S0RDUfqJ_zivJoY5hb7952WS5niDjOGFHzbsM2bOV8z72awxaLeXWRsnsQFo7R9hH1Ucuok58hh1m7o?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro&#039;s Three Sword Style- Purgatory Onigiri!... - BiliBili</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">4. Purgatory Onigiri</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A devastating advanced variation of his signature Oni Giri technique.</p>
+<h3 id="heading-49-his-haki-mastery" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>👑 His Haki Mastery</span>
+          <a href="#heading-49-his-haki-mastery" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>⚡ Conqueror&#039;s Haki – The rare power of a king, allowing him to overwhelm opponents with sheer will.</li>
+<li>🛡️ Armament Haki – Strengthens his swords and attacks with powerful Haki.</li>
+<li>👁️ Observation Haki – Helps him sense opponents and anticipate movements.</li>
+</ul>
+<h3 id="heading-53-why-zoro-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>💎 Why Zoro Is So Powerful</span>
+          <a href="#heading-53-why-zoro-is-so-powerful" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>Exceptional swordsmanship and combat instincts.</li>
+<li>Extraordinary physical strength and endurance.</li>
+<li>Mastery of the Three-Sword Style.</li>
+<li>Powerful Armament and Conqueror&#039;s Haki.</li>
+<li>Unbreakable determination, even in the face of defeat.</li>
+<li>Absolute loyalty to his captain and crew.</li>
+</ul>
+<h2 id="heading-60-3-an-original-story-the-swordsman-s-last-promise" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>📖 3. An Original Story: The Swordsman&#039;s Last Promise</span>
+          <a href="#heading-60-3-an-original-story-the-swordsman-s-last-promise" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Chapter 01 – The Blade That Never Breaks</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/y_VlKIY0t4LZQdRQ--jvElohQz-HpBEcVraFsCscfOPqSYVbYa0y31m-YGYK_92fQa9Yha115Gq9tC-Rw4rM3t4avWYCJAM_5_NT3arXkY8dQJuhvYrpZYY1naGdEjm9ILlKxMaBjppDmaE1d5Qn9StnBYm_68NnlW1eT8pUorg?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Download 4k, Roronoa Zoro, green moon, kimono, One Piece, night, green fire flames, artwork, One Piece characters, manga, Pirate Hunter, Roronoa Zoro One Piece wallpapers for desktop free. Pictures for desktop free</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://wallpapers4screen.com/anime/4k-roronoa-zoro-green-moon-kimono-one-piece-96045?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">wallpapers4screen.com</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">The moon hung above a forgotten island somewhere in the New World.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A cold wind swept through an abandoned samurai village. Broken swords covered the ground, and ancient monuments stood silently beneath the stars.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro walked through the ruins, carrying his three swords.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Suddenly, he noticed something carved into an enormous stone monument.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">It was an ancient message:</p>
+<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg">
+          <p class="leading-relaxed">&quot;When the black blade awakens, the strongest swordsman shall stand before the throne of legends.&quot;</p>
+        </blockquote>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro placed his hand on Wado Ichimonji.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious voice emerged from the darkness.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;You carry three swords, yet you still haven&#039;t discovered the true meaning of swordsmanship.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious old swordsman stepped into the moonlight.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">His body was covered in scars, and a black blade rested against his shoulder.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro smiled.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Then show me.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">The old warrior raised his sword.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">The atmosphere changed.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A powerful wave of Haki spread across the island.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro slowly drew his three blades.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;I&#039;ve got a promise to keep. I don&#039;t have time to lose.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">And so, another legendary battle was about to begin.</p>
+<h2 id="heading-83-4-zoro-s-swordsmanship-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>⚔️ 4. Zoro&#039;s Swordsmanship Power System</span>
+          <a href="#heading-83-4-zoro-s-swordsmanship-power-system" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Every swordsman has a different path to becoming stronger. True mastery requires physical training, mental discipline, Haki control, and an understanding of the blade.</p>
+<h3 id="heading-85-five-levels-of-swordsmanship" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>Five Levels of Swordsmanship</span>
+          <a href="#heading-85-five-levels-of-swordsmanship" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/i6zSotEt5YrdWFfOw66vuhEwpcJ2OpFgRozmJqVnDXIuHTW1kbYOUw74ByIIrgfMDCrPWGjJyhgah3CLTiiLAeeixobY5PVWnfd6IvgdaU3qb5XSBADIBsGRPS3FdrE3L7xleDUK7m_SjRYSNd7CsQYne7MpyE_DdlS3BKx31W8?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece — история о величайшей манге и потрясающем аниме всех времён и народов! | StopGame</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">1. 🌱 Apprentice Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Learn basic sword movements, balance, discipline, and sword control.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/kCkZI5CdwPbkmE3w8sNkraX-YS5DUefYSJ5BUA4OyvJf2WDAWKEm2jw9iH4CzjkqZElXklBkJDkrxkUlrCS3Gogyne5hEnrlwy9wHJi-_Y3vn_cufSB-KCJkLIxxXDWioMphe7tj9VE1fEbnKc2GmSXduZuPGdGosFTvqs9df1Q?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ワンピース - イーストブルー編 - 7話 (アニメ) | 無料動画・見逃し配信を見るなら | ABEMA</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">2. ⚔️ Skilled Warrior</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Develop unique sword techniques, speed, and battle instincts.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/lmBCfgmhVppxEoYi2SZ3u-mohK7xa_lPbdS5ZRhh4kdDtEiDzG11fJYn7yFrYhfaCUIlYLJe8KExFDfS7BFL--31j8kxhV-uaHsO_jcSCqSEyCWaCJMzK7dIe3SQg7Bk3y4I5ss9brzokNmTbwgAWsIHZB2mVgTITAW5A6TdwLM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: Enies Lobby Arc | Summary, Recap, &amp; Review — Poggers</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">3. 🔥 Elite Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Unlock advanced techniques and begin mastering Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/5Kv9AYB3isSNt8oaFfCbv4MJKU8hWnokjxfiROjG0E7tGhjmC3LyqvSwbqYUTJAMkH8IaHrTZ9dWNTzvy4qPU5pPOUZAaFhV2ppYTGUP4nnRZc2roSw-tCQ5ilhdCWB5F6WhAw2_t2zTGTGJoo-GZXrY0jlMGBBxfQun1afqLV4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">When Does Zoro Get Enma In &#039;One Piece&#039;?</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">4. 👑 Legendary Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Master advanced Haki, powerful blades, and extraordinary combat abilities.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/hh78xYEPO5UX0MfRTKOuVaCwB2aoiuhbh-fvjf6z5nkX08Z1zv7BjdM0_rdnbSUnQhkU6yXeaujZlKk91_IFheRT9u9uUKjPimdH0T3A24PJevydlGa4Ub3Njj3mrdFAC0sBplH5AMibWWafYnWnq5q8xo7HmLGUmWv3W_rl-j4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">The Three-Sword Style of the Supreme King! Zoro vs. King (2023)</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">5. 🌌 World&#039;s Greatest Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Reach the pinnacle of swordsmanship and create a legacy that lasts forever.</p>
+<h3 id="heading-101-zoro-s-core-attributes" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🧬 Zoro&#039;s Core Attributes</span>
+          <a href="#heading-101-zoro-s-core-attributes" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<h2 id="heading-103-5-the-zoro-training-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🏋️ 5. The Zoro Training Philosophy</span>
+          <a href="#heading-103-5-the-zoro-training-philosophy" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro doesn&#039;t become stronger by waiting for opportunities. He trains, fights, loses, and comes back stronger.</p>
+<h3 id="heading-105-his-daily-training-mindset" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>His Daily Training Mindset</span>
+          <a href="#heading-105-his-daily-training-mindset" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>💪 Strength training to build extraordinary physical power.</li>
+<li>⚔️ Swordsmanship practice to improve precision and technique.</li>
+<li>🏃 Endurance training to survive exhausting battles.</li>
+<li>🧘 Mental discipline to maintain focus.</li>
+<li>🔥 Continuous challenges to push beyond his limits.</li>
+<li>👑 Never abandon your promises or dreams.</li>
+</ul>
+<h3 id="heading-112-the-five-rules-of-zoro" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>The Five Rules of Zoro</span>
+          <a href="#heading-112-the-five-rules-of-zoro" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ol class="list-decimal pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>Never give up on your dream.</li>
+<li>Never betray the people who trust you.</li>
+<li>Accept defeat, learn, and become stronger.</li>
+<li>Train even when nobody is watching.</li>
+<li>Let your actions speak louder than your words.</li>
+</ol>
+<h2 id="heading-118-6-my-zoro-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🎯 6. My Zoro World-Building Checklist</span>
+          <a href="#heading-118-6-my-zoro-world-building-checklist" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li>Design the legendary swordsmanship world map.</li>
+<li>Create seven unique sword kingdoms.</li>
+<li>Build a history of legendary swords.</li>
+<li>Develop the strongest swordsmen in each region.</li>
+<li>Design different sword-fighting styles.</li>
+<li>Create ancient Haki techniques.</li>
+<li>Develop a mysterious swordsmith civilization.</li>
+<li>Write the story of Zoro&#039;s greatest rival.</li>
+<li>Introduce a legendary black blade.</li>
+<li>Create the ultimate swordsmanship tournament.</li>
+<li>Write the final battle for the World&#039;s Greatest Swordsman title.</li>
+</ul>
+<h2 id="heading-130-7-legendary-quotes-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>✨ 7. Legendary Quotes &amp; Philosophy</span>
+          <a href="#heading-130-7-legendary-quotes-philosophy" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ About Dreams</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Nothing happened.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro&#039;s legendary demonstration of loyalty and sacrifice.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">🔥 About Determination</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;I will never lose again.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A promise that defines his journey.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">👑 About Loyalty</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">A true swordsman stands beside his captain, even when the world stands against them.</p>
+<h2 id="heading-139-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+          <span>🌊 Final Thoughts</span>
+          <a href="#heading-139-final-thoughts" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Roronoa Zoro represents something greater than swordsmanship.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">He represents the power of an unbreakable promise, the discipline to keep improving, and the courage to face impossible challenges.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">He doesn&#039;t need to be the hero of every story. He simply needs to become strong enough to protect the people and dreams that matter to him.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">Three swords. One promise. One ultimate dream.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ Train harder. Stand stronger. Never lose your way. Become the World&#039;s Greatest Swordsman.</p>
+
+      </article>
+
+      <!-- Main Database Viewport (Rendered when document is a database note) -->
+      <div id="database-viewport" class="mt-8"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-[var(--border-color)] py-8 text-center text-xs text-[var(--text-muted)] select-none">
+      <div class="flex items-center justify-center gap-2">
+        <span>Published with</span>
+        <span class="inline-flex items-center gap-1.5 font-semibold text-[var(--text-main)]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center">
+            <svg class="h-8 w-8" viewBox="0 0 512 512" fill="none" role="img" aria-label="SoulSpace Logo">
+  <defs>
+    <linearGradient id="ghost-ring" x1="-201" y1="0" x2="201" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="35%" stop-color="#4F46E5" />
+      <stop offset="70%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#C026D3" />
+    </linearGradient>
+    <path id="ghost-ring-shape" fill-rule="evenodd" d="M -201 0 A 201 55.5 0 1 0 201 0 A 201 55.5 0 1 0 -201 0 Z M -164 -5.5 A 163.5 35.5 0 1 1 163 -5.5 A 163.5 35.5 0 1 1 -164 -5.5 Z" />
+    <clipPath id="ghost-ring-clip">
+      <rect x="-145" y="10" width="290" height="90" />
+    </clipPath>
+  </defs>
+  <g transform="translate(256 258) scale(1.14) translate(-256 -258)">
+    <g transform="translate(257.5 266) rotate(-15.6)">
+      <use href="#ghost-ring-shape" fill="url(#ghost-ring)" />
+    </g>
+    <path fill="#FFFFFF" d="M 244.5 126.5 C 305.5 119.5, 353.5 162.0, 360.5 223.0 L 376.2 332.5 C 378.8 352.5, 365.5 367.2, 347.5 368.8 C 332.2 370.2, 319.8 359.5, 312.8 349.0 C 309.5 344.2, 305.2 344.8, 303.2 350.0 C 297.2 365.8, 282.5 380.2, 263.0 382.0 C 243.5 383.8, 227.5 371.5, 220.2 358.0 C 217.5 353.0, 213.2 353.5, 210.8 358.8 C 204.8 372.0, 193.5 385.0, 177.5 386.5 C 159.5 388.2, 148.2 373.8, 146.5 354.0 L 139.2 248.5 C 134.5 186.5, 183.5 133.5, 244.5 126.5 Z" />
+    <circle cx="205.8" cy="239.1" r="28.6" fill="#090514" />
+    <circle cx="295.4" cy="227.8" r="28.6" fill="#090514" />
+    <g transform="translate(257.5 266) rotate(-15.6)" clip-path="url(#ghost-ring-clip)">
+      <use href="#ghost-ring-shape" fill="url(#ghost-ring)" />
+    </g>
+    <path fill="#FFFFFF" d="M 373.2 112.5 C 375.2 132.8, 381.4 139.0, 401.7 143.9 C 381.4 148.8, 375.2 155.0, 373.2 175.3 C 371.2 155.0, 365.0 148.8, 344.7 143.9 C 365.0 139.0, 371.2 132.8, 373.2 112.5 Z" />
+  </g>
+</svg>
+          </span>
+          
+        </span>
+        <span>on GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+
+    // 1. Responsive Sidebar Drawer Toggle
+    let sidebarOpenMobile = false;
+    let sidebarOpenDesktop = true;
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('guest-sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      const floatBtn = document.getElementById('floating-sidebar-btn');
+      if (!sidebar) return;
+
+      const isMobile = window.innerWidth < 768;
+
+      if (isMobile) {
+        sidebarOpenMobile = !sidebarOpenMobile;
+        if (sidebarOpenMobile) {
+          sidebar.classList.remove('-translate-x-full');
+          sidebar.classList.add('translate-x-0');
+          if (backdrop) {
+            backdrop.classList.remove('hidden');
+            requestAnimationFrame(() => {
+              backdrop.classList.remove('opacity-0', 'pointer-events-none');
+              backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            });
+          }
+          document.body.classList.add('overflow-hidden');
+        } else {
+          sidebar.classList.add('-translate-x-full');
+          sidebar.classList.remove('translate-x-0');
+          if (backdrop) {
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+              if (!sidebarOpenMobile) backdrop.classList.add('hidden');
+            }, 200);
+          }
+          document.body.classList.remove('overflow-hidden');
+        }
+      } else {
+        sidebarOpenDesktop = !sidebarOpenDesktop;
+        if (sidebarOpenDesktop) {
+          sidebar.classList.remove('md:hidden');
+          if (floatBtn) {
+            floatBtn.classList.remove('md:opacity-100', 'md:pointer-events-auto');
+            floatBtn.classList.add('md:opacity-0', 'md:pointer-events-none');
+          }
+        } else {
+          sidebar.classList.add('md:hidden');
+          if (floatBtn) {
+            floatBtn.classList.remove('md:opacity-0', 'md:pointer-events-none');
+            floatBtn.classList.add('md:opacity-100', 'md:pointer-events-auto');
+          }
+        }
+      }
+    }
+
+    function closeSidebarOnMobile() {
+      if (window.innerWidth < 768 && sidebarOpenMobile) {
+        toggleSidebar();
+      }
+    }
+
+    // Floating Table of Contents Hover, Pin, and Interaction
+    let floatingTocPinned = false;
+    let floatingTocLeaveTimer = null;
+
+    function openFloatingToc() {
+      if (floatingTocLeaveTimer) {
+        clearTimeout(floatingTocLeaveTimer);
+        floatingTocLeaveTimer = null;
+      }
+      const card = document.getElementById('floating-toc-card');
+      if (card) {
+        card.classList.remove('hidden');
+        card.classList.add('flex');
+      }
+    }
+
+    function closeFloatingToc() {
+      if (floatingTocPinned) return;
+      floatingTocLeaveTimer = setTimeout(() => {
+        const card = document.getElementById('floating-toc-card');
+        if (card && !floatingTocPinned) {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      }, 240);
+    }
+
+    function toggleFloatingToc() {
+      const card = document.getElementById('floating-toc-card');
+      if (!card) return;
+      if (card.classList.contains('hidden')) {
+        openFloatingToc();
+      } else if (!floatingTocPinned) {
+        card.classList.add('hidden');
+        card.classList.remove('flex');
+      }
+    }
+
+    function togglePinFloatingToc(e) {
+      if (e) e.stopPropagation();
+      floatingTocPinned = !floatingTocPinned;
+      const pinBtn = document.getElementById('floating-toc-pin');
+      if (pinBtn) {
+        if (floatingTocPinned) {
+          pinBtn.classList.add('bg-primary/20', 'text-indigo-600', 'dark:text-indigo-400');
+        } else {
+          pinBtn.classList.remove('bg-primary/20', 'text-indigo-600', 'dark:text-indigo-400');
+        }
+      }
+    }
+
+    const floatingRoot = document.getElementById('floating-toc-root');
+    if (floatingRoot) {
+      floatingRoot.addEventListener('mouseenter', openFloatingToc);
+      floatingRoot.addEventListener('mouseleave', closeFloatingToc);
+    }
+
+    // 2. Heading Smooth Scroll with Drawer Auto-close
+    function scrollToHeading(id) {
+      closeSidebarOnMobile();
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (!floatingTocPinned) {
+        const card = document.getElementById('floating-toc-card');
+        if (card) {
+          setTimeout(() => {
+            if (!floatingTocPinned) {
+              card.classList.add('hidden');
+              card.classList.remove('flex');
+            }
+          }, 200);
+        }
+      }
+    }
+
+    // 3. Table of Contents ScrollSpy
+    function initScrollSpy() {
+      const headings = document.querySelectorAll('article h1[id], article h2[id], article h3[id]');
+      if (!headings.length) return;
+      const tocButtons = document.querySelectorAll('[data-toc-id]');
+      const dashes = document.querySelectorAll('[data-toc-dash]');
+
+      function updateActive() {
+        let activeId = headings[0].id;
+        const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+
+        if (scrollY + windowHeight >= docHeight - 30) {
+          activeId = headings[headings.length - 1].id;
+        } else {
+          const viewportThreshold = 140;
+          for (let i = 0; i < headings.length; i++) {
+            const h = headings[i];
+            const rect = h.getBoundingClientRect();
+            if (rect.top <= viewportThreshold) {
+              activeId = h.id;
+            } else {
+              break;
+            }
+          }
+        }
+
+        // Highlight TOC button entries
+        tocButtons.forEach(btn => {
+          const id = btn.getAttribute('data-toc-id');
+          const bullet = btn.querySelector('.toc-bullet');
+          if (id === activeId) {
+            btn.classList.add('active-toc');
+            if (bullet) {
+              bullet.classList.add('bg-indigo-600', 'dark:bg-indigo-400', 'scale-125');
+              bullet.classList.remove('bg-neutral-400/40');
+            }
+          } else {
+            btn.classList.remove('active-toc');
+            if (bullet) {
+              bullet.classList.remove('bg-indigo-600', 'dark:bg-indigo-400', 'scale-125');
+              bullet.classList.add('bg-neutral-400/40');
+            }
+          }
+        });
+
+        // Highlight Notion vertical dashes
+        dashes.forEach(dash => {
+          const id = dash.getAttribute('data-toc-dash');
+          if (id === activeId) {
+            dash.classList.add('h-[3px]', 'bg-black', 'dark:bg-white', 'shadow-[0_0_8px_rgba(255,255,255,0.7)]', 'scale-x-110', 'opacity-100');
+            dash.classList.remove('h-[2.5px]', 'bg-neutral-400/40', 'dark:bg-neutral-600', 'opacity-70');
+          } else {
+            dash.classList.remove('h-[3px]', 'bg-black', 'dark:bg-white', 'shadow-[0_0_8px_rgba(255,255,255,0.7)]', 'scale-x-110', 'opacity-100');
+            dash.classList.add('h-[2.5px]', 'bg-neutral-400/40', 'dark:bg-neutral-600', 'opacity-70');
+          }
+        });
+
+        // Auto-scroll inside floating card if open
+        const card = document.getElementById('floating-toc-card');
+        if (card && !card.classList.contains('hidden')) {
+          try {
+            const escaped = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(activeId) : activeId;
+            const activeBtn = card.querySelector('[data-toc-id="' + escaped + '"]');
+            if (activeBtn) {
+              activeBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            }
+          } catch {}
+        }
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      window.addEventListener('resize', updateActive, { passive: true });
+      updateActive();
+    }
+    initScrollSpy();
+
+    // 4. System Theme & Manual Toggle
+    function updateThemeIcons(isDark) {
+      const iconName = isDark ? 'sun' : 'moon';
+      document.querySelectorAll('.theme-icon-container').forEach(el => {
+        el.innerHTML = '<i data-lucide="' + iconName + '" class="h-4 w-4"></i>';
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+      localStorage.setItem('soulspace.theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('soulspace-theme', isDark ? 'dark' : 'light');
+      updateThemeIcons(isDark);
+    }
+
+    // Set initial icon based on current DOM class
+    updateThemeIcons(document.documentElement.classList.contains('dark'));
+
+    // Listen to OS theme changes if user hasn't explicitly set a preference
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        const saved = localStorage.getItem('soulspace.theme') || localStorage.getItem('soulspace-theme');
+        if (!saved || saved === 'system') {
+          if (e.matches) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+            updateThemeIcons(true);
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+            updateThemeIcons(false);
+          }
+        }
+      });
+    }
+
+    // 5. Page Width Toggle (Standard / Wide / Full)
+    const WIDTH_PRESETS = [
+      { id: 'standard', class: 'max-w-4xl', icon: 'fold-horizontal', title: 'Page width: Standard (Click for Wide)' },
+      { id: 'wide', class: 'max-w-6xl', icon: 'unfold-horizontal', title: 'Page width: Wide (Click for Full)' },
+      { id: 'full', class: 'max-w-none', icon: 'maximize-2', title: 'Page width: Full (Click for Standard)' }
+    ];
+
+    function applyPageWidth(presetId, save) {
+      const container = document.getElementById('main-document-container');
+      const iconSpan = document.getElementById('page-width-icon');
+      const btn = document.getElementById('page-width-btn');
+      const preset = WIDTH_PRESETS.find(p => p.id === presetId) || WIDTH_PRESETS[0];
+
+      if (container) {
+        container.classList.remove('max-w-4xl', 'max-w-6xl', 'max-w-none');
+        container.classList.add(preset.class);
+      }
+
+      if (btn) {
+        btn.setAttribute('title', preset.title);
+      }
+
+      if (iconSpan) {
+        iconSpan.innerHTML = '<i data-lucide="' + preset.icon + '" class="h-3.5 w-3.5"></i>';
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      if (save) {
+        try {
+          localStorage.setItem('soulspace-page-width', preset.id);
+        } catch (_) {}
+      }
+    }
+
+    function cyclePageWidth() {
+      const current = localStorage.getItem('soulspace-page-width') || 'standard';
+      const currentIndex = WIDTH_PRESETS.findIndex(p => p.id === current);
+      const nextIndex = (currentIndex + 1) % WIDTH_PRESETS.length;
+      applyPageWidth(WIDTH_PRESETS[nextIndex].id, true);
+    }
+
+    try {
+      const savedWidth = localStorage.getItem('soulspace-page-width') || 'standard';
+      applyPageWidth(savedWidth, false);
+    } catch (_) {}
+
+    // 6. Code Block Copy
+    function copyCode(btn) {
+      const pre = btn.closest('.group')?.querySelector('pre code');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        const span = btn.querySelector('span');
+        if (span) {
+          const orig = span.innerText;
+          span.innerText = 'Copied!';
+          setTimeout(() => { span.innerText = orig; }, 1800);
+        }
+      });
+    }
+
+    // 6. Interactive Database Engine (Notion / SoulSpace Quality)
+    const allDatabases = {};
+    const isInteractiveDb = true;
+
+    const COLOR_MAP = {
+      gray: {
+        badge: 'bg-zinc-500/10 text-zinc-700 dark:text-zinc-300 border-zinc-500/20',
+        dot: '#71717a'
+      },
+      blue: {
+        badge: 'bg-sky-500/15 text-sky-700 dark:text-sky-300 border-sky-500/30',
+        dot: '#0ea5e9'
+      },
+      purple: {
+        badge: 'bg-purple-500/15 text-purple-700 dark:text-purple-300 border-purple-500/30',
+        dot: '#a855f7'
+      },
+      green: {
+        badge: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30',
+        dot: '#10b981'
+      },
+      yellow: {
+        badge: 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30',
+        dot: '#f59e0b'
+      },
+      orange: {
+        badge: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 border-orange-500/30',
+        dot: '#f97316'
+      },
+      red: {
+        badge: 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30',
+        dot: '#f43f5e'
+      },
+      pink: {
+        badge: 'bg-pink-500/15 text-pink-700 dark:text-pink-300 border-pink-500/30',
+        dot: '#ec4899'
+      },
+      brown: {
+        badge: 'bg-amber-950/20 text-amber-800 dark:text-amber-300 border-amber-800/30',
+        dot: '#92400e'
+      }
+    };
+
+    const PROP_ICONS = {
+      title: 'type',
+      text: 'type',
+      status: 'circle-dot',
+      select: 'list',
+      multi_select: 'list',
+      date: 'calendar',
+      url: 'link-2',
+      number: 'hash',
+      checkbox: 'check-square',
+      email: 'mail',
+      phone: 'phone',
+      file: 'paperclip',
+      formula: 'calculator'
+    };
+
+    function renderSingleDatabase(targetContainer, db) {
+      if (!targetContainer || !db || !db.properties || !db.rows) return;
+
+      let currentView = (db.views && db.views[0]?.layout === 'gallery') ? 'gallery' : 'table';
+      let search = '';
+
+      function getOptionConfig(prop, val) {
+        if (!prop?.config?.options || !val) return null;
+        const needle = String(val).toLowerCase();
+        return prop.config.options.find(o => o.id === val || o.name.toLowerCase() === needle);
+      }
+
+      function formatCellValue(prop, val) {
+        if (val === null || val === undefined || val === '') {
+          return '<span class="text-[var(--text-dim)]">—</span>';
+        }
+
+        if (prop.type === 'title' || prop.id === 'title') {
+          return '<span class="font-medium text-[var(--text-main)]">' + escapeHtml(String(val)) + '</span>';
+        }
+
+        if (prop.type === 'status') {
+          const opt = getOptionConfig(prop, val);
+          const colorKey = opt?.color || 'gray';
+          const cfg = COLOR_MAP[colorKey] || COLOR_MAP.gray;
+          const label = opt ? opt.name : String(val);
+
+          return '<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium border ' + cfg.badge + '">' +
+            '<span class="h-1.5 w-1.5 rounded-full shrink-0" style="background-color: ' + cfg.dot + '"></span>' +
+            '<span>' + escapeHtml(label) + '</span>' +
+          '</span>';
+        }
+
+        if (prop.type === 'select') {
+          const opt = getOptionConfig(prop, val);
+          const colorKey = opt?.color || 'blue';
+          const cfg = COLOR_MAP[colorKey] || COLOR_MAP.blue;
+          const label = opt ? opt.name : String(val);
+
+          return '<span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium border ' + cfg.badge + '">' +
+            '<span>' + escapeHtml(label) + '</span>' +
+          '</span>';
+        }
+
+        if (prop.type === 'multi_select') {
+          const arr = Array.isArray(val) ? val : [val];
+          return '<div class="flex flex-wrap gap-1">' + arr.map(item => {
+            const opt = getOptionConfig(prop, item);
+            const colorKey = opt?.color || 'purple';
+            const cfg = COLOR_MAP[colorKey] || COLOR_MAP.purple;
+            const label = opt ? opt.name : String(item);
+            return '<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium border ' + cfg.badge + '">' + escapeHtml(label) + '</span>';
+          }).join('') + '</div>';
+        }
+
+        if (prop.type === 'date') {
+          return '<span class="text-[var(--text-muted)] font-mono text-[11px] flex items-center gap-1"><i data-lucide="calendar" class="h-3 w-3 opacity-60"></i> ' + escapeHtml(String(val)) + '</span>';
+        }
+
+        if (prop.type === 'url') {
+          return '<a href="' + escapeHtml(String(val)) + '" target="_blank" rel="noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline truncate max-w-xs block flex items-center gap-1"><span>' + escapeHtml(String(val)) + '</span><i data-lucide="external-link" class="h-3 w-3 opacity-60"></i></a>';
+        }
+
+        if (prop.type === 'checkbox') {
+          const checked = Boolean(val);
+          return checked
+            ? '<span class="inline-flex items-center justify-center h-4 w-4 rounded bg-indigo-600 text-white text-[10px]">✓</span>'
+            : '<span class="inline-flex items-center justify-center h-4 w-4 rounded border border-[var(--border-color)] text-[var(--text-dim)] text-[10px]"></span>';
+        }
+
+        if (prop.type === 'number') {
+          const n = Number(val);
+          return '<span class="font-mono text-xs text-[var(--text-main)]">' + (isNaN(n) ? escapeHtml(String(val)) : n.toLocaleString()) + '</span>';
+        }
+
+        return '<span class="text-[var(--text-main)]">' + escapeHtml(typeof val === 'object' ? JSON.stringify(val) : String(val)) + '</span>';
+      }
+
+      function draw() {
+        const rows = (db.rows || []).filter(r => {
+          if (!search) return true;
+          const lower = search.toLowerCase();
+          if (r.title && r.title.toLowerCase().includes(lower)) return true;
+          return JSON.stringify(r.values || {}).toLowerCase().includes(lower);
+        });
+
+        let h = '<div class="rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden shadow-xs my-6">';
+        
+        // Header
+        h += '<div class="p-3 border-b border-[var(--border-color)] bg-[var(--bg-muted)]/40 flex items-center justify-between gap-3 flex-wrap">';
+        h += '<div class="flex items-center gap-2">';
+        h += '<div class="h-6 w-6 rounded-md bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 flex items-center justify-center">';
+        h += '<i data-lucide="database" class="h-3.5 w-3.5"></i>';
+        h += '</div>';
+        h += '<span class="text-xs font-semibold text-[var(--text-main)]">' + escapeHtml(db.title || 'Database') + '</span>';
+        h += '<span class="text-[10px] text-[var(--text-muted)] font-mono bg-[var(--bg-card)] border border-[var(--border-color)] px-1.5 py-0.5 rounded-full">' + rows.length + ' records</span>';
+        h += '</div>';
+
+        if (isInteractiveDb) {
+          h += '<div class="flex items-center gap-2">';
+          h += '<div class="relative">';
+          h += '<input id="db-search-' + db.id + '" value="' + escapeHtml(search) + '" placeholder="Search database..." class="text-xs pl-7 pr-2.5 py-1 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-main)] placeholder-[var(--text-dim)] focus:outline-none focus:ring-1 focus:ring-indigo-500 w-36 sm:w-48" />';
+          h += '<i data-lucide="search" class="h-3.5 w-3.5 text-[var(--text-dim)] absolute left-2 top-2"></i>';
+          h += '</div>';
+
+          h += '<div class="flex rounded-lg border border-[var(--border-color)] overflow-hidden text-[11px] bg-[var(--bg-card)] p-0.5 shadow-2xs">';
+          h += '<button id="btn-table-' + db.id + '" class="px-2.5 py-1 rounded-md flex items-center gap-1 cursor-pointer transition-colors ' + (currentView === 'table' ? 'bg-[var(--bg-accent)] font-semibold text-[var(--text-main)] shadow-2xs' : 'text-[var(--text-muted)] hover:text-[var(--text-main)]') + '"><i data-lucide="table" class="h-3 w-3"></i> Table</button>';
+          h += '<button id="btn-gallery-' + db.id + '" class="px-2.5 py-1 rounded-md flex items-center gap-1 cursor-pointer transition-colors ' + (currentView === 'gallery' ? 'bg-[var(--bg-accent)] font-semibold text-[var(--text-main)] shadow-2xs' : 'text-[var(--text-muted)] hover:text-[var(--text-main)]') + '"><i data-lucide="layout-grid" class="h-3 w-3"></i> Gallery</button>';
+          h += '</div></div>';
+        }
+        h += '</div>';
+
+        if (currentView === 'gallery') {
+          h += '<div class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">';
+          rows.forEach(r => {
+            h += '<div class="p-3.5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] shadow-xs hover:border-indigo-500/40 transition-colors space-y-2.5">';
+            (db.properties || []).forEach((p, idx) => {
+              const val = r.values?.[p.id];
+              const propIcon = PROP_ICONS[p.type] || 'circle';
+              if (idx === 0) {
+                h += '<div class="font-semibold text-xs text-[var(--text-main)] truncate flex items-center gap-1.5"><i data-lucide="file-text" class="h-3.5 w-3.5 text-[var(--text-muted)] shrink-0"></i> <span>' + escapeHtml(r.title || val || 'Untitled') + '</span></div>';
+              } else if (val !== undefined && val !== null && val !== '') {
+                h += '<div class="text-[11px] flex items-center justify-between gap-2 border-t border-[var(--border-subtle)] pt-1.5"><span class="text-[var(--text-muted)] flex items-center gap-1 shrink-0"><i data-lucide="' + propIcon + '" class="h-3 w-3 opacity-60"></i>' + escapeHtml(p.name) + ':</span><span class="truncate">' + formatCellValue(p, val) + '</span></div>';
+              }
+            });
+            h += '</div>';
+          });
+          h += '</div>';
+        } else {
+          h += '<div class="overflow-x-auto"><table class="w-full text-left text-xs border-collapse">';
+          h += '<thead class="bg-[var(--bg-muted)]/30 text-[var(--text-muted)] border-b border-[var(--border-color)]"><tr>';
+          (db.properties || []).forEach(p => {
+            const propIcon = PROP_ICONS[p.type] || 'circle';
+            h += '<th class="px-3.5 py-2.5 font-medium tracking-wide text-[11px] border-r border-[var(--border-subtle)] last:border-r-0 whitespace-nowrap"><div class="flex items-center gap-1.5"><i data-lucide="' + propIcon + '" class="h-3.5 w-3.5 opacity-60"></i><span>' + escapeHtml(p.name) + '</span></div></th>';
+          });
+          h += '</tr></thead><tbody class="divide-y divide-[var(--border-color)]">';
+          rows.forEach(r => {
+            h += '<tr class="hover:bg-[var(--bg-accent)]/30 transition-colors">';
+            (db.properties || []).forEach(p => {
+              const val = r.values?.[p.id];
+              h += '<td class="px-3.5 py-2.5 align-middle border-r border-[var(--border-subtle)] last:border-r-0">' + formatCellValue(p, val) + '</td>';
+            });
+            h += '</tr>';
+          });
+          h += '</tbody>';
+          h += '<tfoot class="border-t border-[var(--border-color)] bg-[var(--bg-muted)]/20 text-[var(--text-muted)] text-[11px] font-mono"><tr>';
+          (db.properties || []).forEach((p, idx) => {
+            if (idx === 0) {
+              h += '<td class="px-3.5 py-2 border-r border-[var(--border-subtle)]">Count ' + rows.length + '</td>';
+            } else {
+              h += '<td class="px-3.5 py-2 border-r border-[var(--border-subtle)]"></td>';
+            }
+          });
+          h += '</tr></tfoot>';
+          h += '</table></div>';
+        }
+
+        h += '</div>';
+        targetContainer.innerHTML = h;
+
+        if (window.lucide) lucide.createIcons();
+
+        const sInput = document.getElementById('db-search-' + db.id);
+        if (sInput) {
+          sInput.oninput = (e) => { search = e.target.value; draw(); };
+        }
+
+        const bGallery = document.getElementById('btn-gallery-' + db.id);
+        if (bGallery) bGallery.onclick = () => { currentView = 'gallery'; draw(); };
+        const bTable = document.getElementById('btn-table-' + db.id);
+        if (bTable) bTable.onclick = () => { currentView = 'table'; draw(); };
+      }
+
+      draw();
+    }
+
+    // Mount databases
+    const dbKeys = Object.keys(allDatabases);
+    if (dbKeys.length > 0) {
+      dbKeys.forEach(k => {
+        const inlineContainer = document.getElementById('db-view-' + k);
+        if (inlineContainer) {
+          renderSingleDatabase(inlineContainer, allDatabases[k]);
+        }
+      });
+
+      // ONLY render in #database-viewport if this document itself is a full-page database note
+      const isFullPageDb = false;
+      const defaultRoot = document.getElementById('database-viewport');
+      if (isFullPageDb && defaultRoot && !document.getElementById('db-view-' + dbKeys[0])) {
+        renderSingleDatabase(defaultRoot, allDatabases[dbKeys[0]]);
+      }
+
+      // Populate sidebar records if full-page database note
+      if (isFullPageDb) {
+        const sidebarRecs = document.getElementById('sidebar-db-records');
+        if (sidebarRecs && allDatabases[dbKeys[0]]) {
+          const rootDb = allDatabases[dbKeys[0]];
+          const recHtml = (rootDb.rows || []).map(r => {
+            return '<div class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-colors truncate cursor-pointer"><i data-lucide="file-text" class="h-3.5 w-3.5 opacity-60 shrink-0"></i><span class="truncate">' + escapeHtml(r.title || 'Untitled') + '</span></div>';
+          }).join('');
+          sidebarRecs.innerHTML = recHtml;
+          if (window.lucide) lucide.createIcons();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
