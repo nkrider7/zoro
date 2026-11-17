@@ -77,6 +77,26 @@
       --text-muted: #6f6e69;
       --text-dim: #9b9a95;
       --primary-color: #6366f1;
+
+      /* BlockNote colors - Light */
+      --bn-color-gray: #9b9a97;
+      --bn-bg-gray: #ebeced;
+      --bn-color-brown: #64473a;
+      --bn-bg-brown: #e9e5e3;
+      --bn-color-red: #e03e3e;
+      --bn-bg-red: #fbe4e4;
+      --bn-color-orange: #d9730d;
+      --bn-bg-orange: #f6e9d9;
+      --bn-color-yellow: #dfab01;
+      --bn-bg-yellow: #fbf3db;
+      --bn-color-green: #4d6461;
+      --bn-bg-green: #ddedea;
+      --bn-color-blue: #0b6e99;
+      --bn-bg-blue: #ddebf1;
+      --bn-color-purple: #6940a5;
+      --bn-bg-purple: #eae4f2;
+      --bn-color-pink: #ad1a72;
+      --bn-bg-pink: #f4dfeb;
     }
 
     html.dark {
@@ -91,6 +111,51 @@
       --text-muted: #949494;
       --text-dim: #666666;
       --primary-color: #818cf8;
+
+      /* BlockNote colors - Dark */
+      --bn-color-gray: #bebdb8;
+      --bn-bg-gray: #454b4e;
+      --bn-color-brown: #8e6552;
+      --bn-bg-brown: #604b44;
+      --bn-color-red: #ec4040;
+      --bn-bg-red: #be3434;
+      --bn-color-orange: #e3790d;
+      --bn-bg-orange: #854c1d;
+      --bn-color-yellow: #dfab01;
+      --bn-bg-yellow: #89632a;
+      --bn-color-green: #6b8b87;
+      --bn-bg-green: #2b593f;
+      --bn-color-blue: #0e87bc;
+      --bn-bg-blue: #28456c;
+      --bn-color-purple: #8552d7;
+      --bn-bg-purple: #492f64;
+      --bn-color-pink: #da208f;
+      --bn-bg-pink: #69314c;
+    }
+
+    .bn-bg-gray { background-color: var(--bn-bg-gray) !important; }
+    .bn-bg-brown { background-color: var(--bn-bg-brown) !important; }
+    .bn-bg-red { background-color: var(--bn-bg-red) !important; }
+    .bn-bg-orange { background-color: var(--bn-bg-orange) !important; }
+    .bn-bg-yellow { background-color: var(--bn-bg-yellow) !important; }
+    .bn-bg-green { background-color: var(--bn-bg-green) !important; }
+    .bn-bg-blue { background-color: var(--bn-bg-blue) !important; }
+    .bn-bg-purple { background-color: var(--bn-bg-purple) !important; }
+    .bn-bg-pink { background-color: var(--bn-bg-pink) !important; }
+
+    .bn-text-gray { color: var(--bn-color-gray) !important; }
+    .bn-text-brown { color: var(--bn-color-brown) !important; }
+    .bn-text-red { color: var(--bn-color-red) !important; }
+    .bn-text-orange { color: var(--bn-color-orange) !important; }
+    .bn-text-yellow { color: var(--bn-color-yellow) !important; }
+    .bn-text-green { color: var(--bn-color-green) !important; }
+    .bn-text-blue { color: var(--bn-color-blue) !important; }
+    .bn-text-purple { color: var(--bn-color-purple) !important; }
+    .bn-text-pink { color: var(--bn-color-pink) !important; }
+
+    /* In dark mode, ensure high contrast white text for solid colored block backgrounds unless text color is explicitly styled */
+    html.dark .bn-block-bg:not([class*="bn-text-"]) {
+      color: #ffffff !important;
     }
 
     body {
@@ -359,286 +424,344 @@
 
       <!-- Article Body -->
       <article class="space-y-2 text-[var(--text-main)] text-sm sm:text-base leading-relaxed">
-        <h1 id="heading-0-the-world-of-one-piece-the-journey-of-vinsmoke-sanji-the-black-leg" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+        <h1 id="heading-0-the-world-of-one-piece-the-journey-of-vinsmoke-sanji-the-black-leg" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🔥 The World of One Piece: The Journey of Vinsmoke Sanji, The Black Leg</span>
           <a href="#heading-0-the-world-of-one-piece-the-journey-of-vinsmoke-sanji-the-black-leg" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h1>
-<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg">
+<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg ">
           <p class="leading-relaxed">&quot;I&#039;ll never let anyone go hungry. That&#039;s the pride of a cook.&quot; 🍳🔥</p>
         </blockquote>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Welcome to a world where cooking is an art, passion is a superpower, and a true gentleman fights with his heart as much as his strength.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A world where legendary chefs sail across dangerous oceans searching for the All Blue, where every meal carries a story, and where a single kick can shake the strongest warriors.</p>
-<h2 id="heading-4-1-building-a-world-of-culinary-adventure" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Welcome to a world where cooking is an art, passion is a superpower, and a true gentleman fights with his heart as much as his strength.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A world where legendary chefs sail across dangerous oceans searching for the All Blue, where every meal carries a story, and where a single kick can shake the strongest warriors.</p>
+<h2 id="heading-4-1-building-a-world-of-culinary-adventure" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🍳 1. Building a World of Culinary Adventure</span>
           <a href="#heading-4-1-building-a-world-of-culinary-adventure" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Imagine creating an anime-inspired universe filled with legendary restaurants, mysterious oceans, floating kitchens, royal food kingdoms, and extraordinary chefs.</p>
-<h3 id="heading-6-the-seven-legendary-culinary-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Imagine creating an anime-inspired universe filled with legendary restaurants, mysterious oceans, floating kitchens, royal food kingdoms, and extraordinary chefs.</p>
+<h3 id="heading-6-the-seven-legendary-culinary-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🌍 The Seven Legendary Culinary Regions</span>
           <a href="#heading-6-the-seven-legendary-culinary-regions" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>🌋 Flameheart Island – A volcanic kingdom famous for its fire-powered kitchens and legendary chefs.</li>
-<li>❄️ Frostbite Kingdom – A frozen civilization where chefs prepare extraordinary meals using rare ingredients.</li>
-<li>🌸 Sakura Gardens – A peaceful land famous for traditional cooking, beautiful gardens, and ancient recipes.</li>
-<li>🌊 Grand Blue Ocean – A mysterious ocean believed to contain every species of fish in existence.</li>
-<li>🌑 Shadow Kitchen – A secret underground world where dangerous chefs experiment with forbidden ingredients.</li>
-<li>☁️ Cloud Nine Kingdom – A floating civilization known for magical fruits and heavenly desserts.</li>
-<li>💎 Golden Feast Empire – A wealthy kingdom where royal chefs prepare meals for legendary warriors.</li>
+<li class="">🌋 Flameheart Island – A volcanic kingdom famous for its fire-powered kitchens and legendary chefs.</li>
+<li class="">❄️ Frostbite Kingdom – A frozen civilization where chefs prepare extraordinary meals using rare ingredients.</li>
+<li class="">🌸 Sakura Gardens – A peaceful land famous for traditional cooking, beautiful gardens, and ancient recipes.</li>
+<li class="">🌊 Grand Blue Ocean – A mysterious ocean believed to contain every species of fish in existence.</li>
+<li class="">🌑 Shadow Kitchen – A secret underground world where dangerous chefs experiment with forbidden ingredients.</li>
+<li class="">☁️ Cloud Nine Kingdom – A floating civilization known for magical fruits and heavenly desserts.</li>
+<li class="">💎 Golden Feast Empire – A wealthy kingdom where royal chefs prepare meals for legendary warriors.</li>
 </ul>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Every region has its own culinary traditions, rare ingredients, cooking techniques, and legendary master chefs.</p>
-<h2 id="heading-15-2-legendary-character-vinsmoke-sanji" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Every region has its own culinary traditions, rare ingredients, cooking techniques, and legendary master chefs.</p>
+<h2 id="heading-15-2-legendary-character-vinsmoke-sanji" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>👑 2. Legendary Character: Vinsmoke Sanji</span>
           <a href="#heading-15-2-legendary-character-vinsmoke-sanji" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Elegance, passion, kindness, intelligence, and devastating kicking power.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/70Fb97_aMP6mbJSvF0QncDiWxZi1TNbbZpLarkYW-1IIF5ax0ArkhrEFYLSg2LAG5RreleknNUrrYnyYIuNThVijusbMVIDH3qmdWsrKC2KjqstHXUEF2VE5YIIoPWM9k2Kk82obkJEaEbj79UYN24bnJY6z-Zl36Wex5dTcYcM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece Fights Explained: Sanji vs. Queen - Deltia&#039;s Gaming</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/gmh-oMttUzOGL6YMB9g_YwD84yqFFD_m-mc_pbzsjsR4_mUCOm61wSbFW_rGfYM6E5egD85IA00_KbARGdEgkQ70x3hjYoA1q-lex2d6NCxe0hrIfyAdLAlEObB1v7-ilH9bU1--80M8gCyYXm8LHair_RZbpq8_9NJ7MbNrMHE?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">4/8 アニメ「ワンピース」831話先行カット公開！遂にサンジとプリンの結婚式が始まる！ | ニュース | ONE PIECE.com（ワンピース ドットコム）</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/gA3f11W0dU9qS94R2Khpd2ySapeMnhAZqmaGKGBksPO_YxseKfta3a42Gwiq9gF3qDAK7xJKbdOFU39GH0KcZRwQWkF_eKmGKmW9I8h-wDjKmZ2OTltCjGjBhZekHE0kEzalAdf5f0wG-dcrCMthCbTyW7ofUVFh1ikQr7R2GzA?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">�����s�[�X �����T�C�g ���f�A�j���[�V����</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">8</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Vinsmoke Sanji is one of the most fascinating characters in the One Piece universe.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He is the Straw Hat Pirates&#039; cook, a master of Black Leg Style, and a warrior whose dream is to discover the legendary All Blue.</p>
-<h3 id="heading-23-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Elegance, passion, kindness, intelligence, and devastating kicking power.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/70Fb97_aMP6mbJSvF0QncDiWxZi1TNbbZpLarkYW-1IIF5ax0ArkhrEFYLSg2LAG5RreleknNUrrYnyYIuNThVijusbMVIDH3qmdWsrKC2KjqstHXUEF2VE5YIIoPWM9k2Kk82obkJEaEbj79UYN24bnJY6z-Zl36Wex5dTcYcM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece Fights Explained: Sanji vs. Queen - Deltia&#039;s Gaming</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/gmh-oMttUzOGL6YMB9g_YwD84yqFFD_m-mc_pbzsjsR4_mUCOm61wSbFW_rGfYM6E5egD85IA00_KbARGdEgkQ70x3hjYoA1q-lex2d6NCxe0hrIfyAdLAlEObB1v7-ilH9bU1--80M8gCyYXm8LHair_RZbpq8_9NJ7MbNrMHE?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">4/8 アニメ「ワンピース」831話先行カット公開！遂にサンジとプリンの結婚式が始まる！ | ニュース | ONE PIECE.com（ワンピース ドットコム）</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/gA3f11W0dU9qS94R2Khpd2ySapeMnhAZqmaGKGBksPO_YxseKfta3a42Gwiq9gF3qDAK7xJKbdOFU39GH0KcZRwQWkF_eKmGKmW9I8h-wDjKmZ2OTltCjGjBhZekHE0kEzalAdf5f0wG-dcrCMthCbTyW7ofUVFh1ikQr7R2GzA?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">�����s�[�X �����T�C�g ���f�A�j���[�V����</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">8</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Vinsmoke Sanji is one of the most fascinating characters in the One Piece universe.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He is the Straw Hat Pirates&#039; cook, a master of Black Leg Style, and a warrior whose dream is to discover the legendary All Blue.</p>
+<h3 id="heading-23-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>💛 Character Profile</span>
           <a href="#heading-23-character-profile" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<h3 id="heading-25-his-legendary-fighting-abilities" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<div class="my-6 overflow-x-auto rounded-xl border border-[var(--border-color)] shadow-xs">
+            <table class="min-w-full divide-y divide-[var(--border-color)] text-left text-sm text-[var(--text-main)]">
+              <tbody class="divide-y divide-[var(--border-color)] bg-[var(--bg-card)]">
+                <tr>
+                    <th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th><th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+<h3 id="heading-25-his-legendary-fighting-abilities" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🔥 His Legendary Fighting Abilities</span>
           <a href="#heading-25-his-legendary-fighting-abilities" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/HoWH5vu2zCvBiFTvwIw-n0AsXd4YGaHkG_CpcOpWkkSXVHCFS8tTQNbaq29SEmUmmT5vQ2Nk1hVz-rjuiQT_4GDEZx7pvzlws9e1_4Cr2ol8HZgt-kxqjOgNoe8Py173yyl84TcHyeVXIUrjS0Ryx8O3NF0-xHbCBKF_WbdKTkU?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">画像ギャラリー | 「トレクル」，“ONE PIECE FILM RED 私は最強超スゴフェス!!終幕編”を開催中</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">1. Diable Jambe</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji heats his leg until it bursts into flames, dramatically increasing the destructive power of his kicks.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/gWrMWgBDPN1BRYbPxAtY4mGIC3XT8Hn1EUssPIVfPmo8z7OamgiL3PFQfGHKh5_PQ1WOdvjwng4IQ9ua9WRZ8ZJCaOMiixnZQ1vbx3VO4V9WJqfQFrLojPbjpWiTXz9SMtWZSCz5IiobXntQaIF8Ai5q97OERLMdxi7ZjW0bgVo?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ONE PIECE: curiosità e retroscena sull&#039;Ifrit Jambe, l&#039;incredibile tecnica di Sanji</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">2. Ifrit Jambe</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">An advanced technique combining powerful flames, enhanced physical strength, and Armament Haki.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/Mw_FV2_6Aj_sPkxI-nb0XiGgIJ4vMIJ1vyNvpx0jNzz2S1mRNljv_Ah5CD5GR8w87Ngny1RE7sGH7soGPE1bn-e4mHlw2S2ikEAffI2vynNvJRofIATTC4Vjp0UG8v8CuPBkpUnyrSBOQfRwq31rrzZUQNt6JBKXBTHOxoFNWD4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Skywalk | OnePiecePedia | Fandom</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">3. Sky Walk</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji kicks the air repeatedly to move through the sky, allowing him to fight in midair.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/N-XttvAU_IbQMxhiL7Kf2yUNzHgI_oyTof61WmnxCk4LJI_bIm0JRiQVE8CYzaDZ2B6Nwg_VobPU416yGGJMTbw_SwPzdH5qmWh4Yjb9Ku3is9lcJV9-T7c9P8ehZlXY5mfEzPVgaunEBY4Sv2oI4E8KkO5CGTTA_74aSgpZ30s?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Sanji Blue Walk Sanji Underwater GIF - Sanji Blue Walk Sanji Underwater Sanji Fishman - Discover &amp; Share GIFs</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">4. Blue Walk</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A high-speed underwater movement technique that allows Sanji to travel through the ocean.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/LvUnYiHyCUvb4sIpWllDw9JSrKA80aZExKhkPBXnjGofP8p066eUlqrOL8X0V4wIHqqBKteVKxEDs_2Muo1oiPJOlLHWMcKJAt1H2JeoR1IlrF1E3VECVn3ES56bY5vYZxadnWq44cdLEJomyMSEqSxMlfgAuS1smkbG2AmO40M?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ワンピース第1080話 コビー救出に「海軍の英雄」ガープが動く！　アニメ 1057話 サンジの体に異変が？ - ワンピース</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">5. Mouton Shot</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A powerful finishing kick delivered with tremendous force.</p>
-<h3 id="heading-41-why-sanji-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/HoWH5vu2zCvBiFTvwIw-n0AsXd4YGaHkG_CpcOpWkkSXVHCFS8tTQNbaq29SEmUmmT5vQ2Nk1hVz-rjuiQT_4GDEZx7pvzlws9e1_4Cr2ol8HZgt-kxqjOgNoe8Py173yyl84TcHyeVXIUrjS0Ryx8O3NF0-xHbCBKF_WbdKTkU?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">画像ギャラリー | 「トレクル」，“ONE PIECE FILM RED 私は最強超スゴフェス!!終幕編”を開催中</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">1. Diable Jambe</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji heats his leg until it bursts into flames, dramatically increasing the destructive power of his kicks.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/gWrMWgBDPN1BRYbPxAtY4mGIC3XT8Hn1EUssPIVfPmo8z7OamgiL3PFQfGHKh5_PQ1WOdvjwng4IQ9ua9WRZ8ZJCaOMiixnZQ1vbx3VO4V9WJqfQFrLojPbjpWiTXz9SMtWZSCz5IiobXntQaIF8Ai5q97OERLMdxi7ZjW0bgVo?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ONE PIECE: curiosità e retroscena sull&#039;Ifrit Jambe, l&#039;incredibile tecnica di Sanji</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">2. Ifrit Jambe</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">An advanced technique combining powerful flames, enhanced physical strength, and Armament Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/Mw_FV2_6Aj_sPkxI-nb0XiGgIJ4vMIJ1vyNvpx0jNzz2S1mRNljv_Ah5CD5GR8w87Ngny1RE7sGH7soGPE1bn-e4mHlw2S2ikEAffI2vynNvJRofIATTC4Vjp0UG8v8CuPBkpUnyrSBOQfRwq31rrzZUQNt6JBKXBTHOxoFNWD4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Skywalk | OnePiecePedia | Fandom</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">3. Sky Walk</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji kicks the air repeatedly to move through the sky, allowing him to fight in midair.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/N-XttvAU_IbQMxhiL7Kf2yUNzHgI_oyTof61WmnxCk4LJI_bIm0JRiQVE8CYzaDZ2B6Nwg_VobPU416yGGJMTbw_SwPzdH5qmWh4Yjb9Ku3is9lcJV9-T7c9P8ehZlXY5mfEzPVgaunEBY4Sv2oI4E8KkO5CGTTA_74aSgpZ30s?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Sanji Blue Walk Sanji Underwater GIF - Sanji Blue Walk Sanji Underwater Sanji Fishman - Discover &amp; Share GIFs</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">4. Blue Walk</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A high-speed underwater movement technique that allows Sanji to travel through the ocean.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/LvUnYiHyCUvb4sIpWllDw9JSrKA80aZExKhkPBXnjGofP8p066eUlqrOL8X0V4wIHqqBKteVKxEDs_2Muo1oiPJOlLHWMcKJAt1H2JeoR1IlrF1E3VECVn3ES56bY5vYZxadnWq44cdLEJomyMSEqSxMlfgAuS1smkbG2AmO40M?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ワンピース第1080話 コビー救出に「海軍の英雄」ガープが動く！　アニメ 1057話 サンジの体に異変が？ - ワンピース</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">5. Mouton Shot</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A powerful finishing kick delivered with tremendous force.</p>
+<h3 id="heading-41-why-sanji-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>💎 Why Sanji Is So Powerful</span>
           <a href="#heading-41-why-sanji-is-so-powerful" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Exceptional kicking techniques and combat intelligence.</li>
-<li>Incredible speed and agility.</li>
-<li>Advanced Observation Haki.</li>
-<li>Strong Armament Haki.</li>
-<li>Extraordinary durability and regeneration through Germa modifications.</li>
-<li>Powerful fire-based combat techniques.</li>
-<li>A brilliant tactical mind.</li>
-<li>An unbreakable determination to protect his friends.</li>
+<li class="">Exceptional kicking techniques and combat intelligence.</li>
+<li class="">Incredible speed and agility.</li>
+<li class="">Advanced Observation Haki.</li>
+<li class="">Strong Armament Haki.</li>
+<li class="">Extraordinary durability and regeneration through Germa modifications.</li>
+<li class="">Powerful fire-based combat techniques.</li>
+<li class="">A brilliant tactical mind.</li>
+<li class="">An unbreakable determination to protect his friends.</li>
 </ul>
-<h2 id="heading-50-3-the-legendary-dream-finding-the-all-blue" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-50-3-the-legendary-dream-finding-the-all-blue" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🍽️ 3. The Legendary Dream: Finding the All Blue</span>
           <a href="#heading-50-3-the-legendary-dream-finding-the-all-blue" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/wI0VOI_2KY0UQmHQjOdHiVwFR-aAFgqSceMJ_rwDaH_0M3DMxgMbzyJTeg2HupJWB0bc_SOA9nDiHyDlcl4qQpFFwaiG0qIterpSFS8YmE6XVNWed5c3c46vQYFjQXik8Cg32QAzsqql6YQHlbLmOe3v33PBwLxDyCQKhM-5FW0?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">N.Silva @👒🚬 (@nohara_syl) on X</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://x.com/nohara_syl/status/1629187736308523010/photo/1?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">x.com</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The All Blue is a legendary sea where the waters of the North Blue, South Blue, East Blue, and West Blue meet.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">It is said to contain fish from every ocean in the world.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">For Sanji, discovering the All Blue means discovering the ultimate paradise for a chef.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Imagine an ocean where:</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/wI0VOI_2KY0UQmHQjOdHiVwFR-aAFgqSceMJ_rwDaH_0M3DMxgMbzyJTeg2HupJWB0bc_SOA9nDiHyDlcl4qQpFFwaiG0qIterpSFS8YmE6XVNWed5c3c46vQYFjQXik8Cg32QAzsqql6YQHlbLmOe3v33PBwLxDyCQKhM-5FW0?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">N.Silva @👒🚬 (@nohara_syl) on X</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://x.com/nohara_syl/status/1629187736308523010/photo/1?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">x.com</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The All Blue is a legendary sea where the waters of the North Blue, South Blue, East Blue, and West Blue meet.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">It is said to contain fish from every ocean in the world.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">For Sanji, discovering the All Blue means discovering the ultimate paradise for a chef.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Imagine an ocean where:</p>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>🐟 Every species of fish exists.</li>
-<li>🌊 Four great oceans meet.</li>
-<li>🍣 Legendary ingredients can be discovered.</li>
-<li>🏝️ Mysterious islands hide rare culinary treasures.</li>
-<li>👨‍🍳 The greatest chefs gather to create extraordinary meals.</li>
+<li class="">🐟 Every species of fish exists.</li>
+<li class="">🌊 Four great oceans meet.</li>
+<li class="">🍣 Legendary ingredients can be discovered.</li>
+<li class="">🏝️ Mysterious islands hide rare culinary treasures.</li>
+<li class="">👨‍🍳 The greatest chefs gather to create extraordinary meals.</li>
 </ul>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The All Blue isn&#039;t just a place. It&#039;s Sanji&#039;s lifelong dream.</p>
-<h2 id="heading-63-4-an-original-story-the-chef-of-the-forgotten-sea" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The All Blue isn&#039;t just a place. It&#039;s Sanji&#039;s lifelong dream.</p>
+<h2 id="heading-63-4-an-original-story-the-chef-of-the-forgotten-sea" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>📖 4. An Original Story: The Chef of the Forgotten Sea</span>
           <a href="#heading-63-4-an-original-story-the-chef-of-the-forgotten-sea" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Chapter 01 – The Restaurant Beyond the Horizon</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/L06_Wlltn1TJzUAhW3qsdo8uIvhDDZ5Q8A8542O-Bhh0z-mifMWk7vKvC--kXi_UMlvtd_RX6nm-mthmsMKkRNh-euILrLpsOb-MD2jk2a4F7spewBDmxM0YvJwhXsU4FxndLTwK_4148DBFcQmte4hr3PIaFjdSusYDpe_f-uw?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Sanji Sunset Mousepad One Piece Anime Desk Mat Aesthetic | PokeTCG – PokéTCG</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://poketcg.in/products/sanji-sunset-vibes-mousepad-anime-desk-mat-xl-one-piece-golden-hour-gaming-mouse-pad-aesthetic-poketcg?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">poketcg.in</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The sun slowly disappeared beneath the endless ocean.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Somewhere in the New World, a mysterious island appeared on the horizon.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">It wasn&#039;t recorded on any map.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">An ancient restaurant stood on its shore, surrounded by enormous waves and strange sea creatures.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Inside the restaurant, an old chef was preparing a meal using ingredients nobody had ever seen before.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji stepped inside.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He looked around and noticed a strange symbol carved into the wooden wall.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">It was an ancient map of four oceans.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The old chef turned toward him.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;So, you&#039;re the cook searching for the All Blue?&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji adjusted his tie and smiled.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;That&#039;s right. And I won&#039;t stop until I find it.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The old chef placed a mysterious golden ingredient on the table.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Then prove that you&#039;re worthy of discovering the greatest kitchen in the world.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Suddenly, the entire island began shaking.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A gigantic sea creature emerged from the ocean.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji rolled up his sleeves.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Flames appeared around his leg.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Looks like dinner just arrived.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🔥 His journey toward the All Blue had entered a new chapter.</p>
-<h2 id="heading-87-5-sanji-s-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Chapter 01 – The Restaurant Beyond the Horizon</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/L06_Wlltn1TJzUAhW3qsdo8uIvhDDZ5Q8A8542O-Bhh0z-mifMWk7vKvC--kXi_UMlvtd_RX6nm-mthmsMKkRNh-euILrLpsOb-MD2jk2a4F7spewBDmxM0YvJwhXsU4FxndLTwK_4148DBFcQmte4hr3PIaFjdSusYDpe_f-uw?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Sanji Sunset Mousepad One Piece Anime Desk Mat Aesthetic | PokeTCG – PokéTCG</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://poketcg.in/products/sanji-sunset-vibes-mousepad-anime-desk-mat-xl-one-piece-golden-hour-gaming-mouse-pad-aesthetic-poketcg?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">poketcg.in</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The sun slowly disappeared beneath the endless ocean.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Somewhere in the New World, a mysterious island appeared on the horizon.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">It wasn&#039;t recorded on any map.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">An ancient restaurant stood on its shore, surrounded by enormous waves and strange sea creatures.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Inside the restaurant, an old chef was preparing a meal using ingredients nobody had ever seen before.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji stepped inside.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He looked around and noticed a strange symbol carved into the wooden wall.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">It was an ancient map of four oceans.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The old chef turned toward him.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;So, you&#039;re the cook searching for the All Blue?&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji adjusted his tie and smiled.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;That&#039;s right. And I won&#039;t stop until I find it.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The old chef placed a mysterious golden ingredient on the table.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;Then prove that you&#039;re worthy of discovering the greatest kitchen in the world.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Suddenly, the entire island began shaking.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A gigantic sea creature emerged from the ocean.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji rolled up his sleeves.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Flames appeared around his leg.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;Looks like dinner just arrived.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🔥 His journey toward the All Blue had entered a new chapter.</p>
+<h2 id="heading-87-5-sanji-s-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>⚔️ 5. Sanji&#039;s Power System</span>
           <a href="#heading-87-5-sanji-s-power-system" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji&#039;s strength comes from a combination of martial arts, Haki, natural talent, and his awakened Germa enhancements.</p>
-<h3 id="heading-89-five-levels-of-combat-mastery" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji&#039;s strength comes from a combination of martial arts, Haki, natural talent, and his awakened Germa enhancements.</p>
+<h3 id="heading-89-five-levels-of-combat-mastery" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>Five Levels of Combat Mastery</span>
           <a href="#heading-89-five-levels-of-combat-mastery" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/6MGG1qXNu1qgUKU_cBJPWyU22VDB2OQlL7sYQTwzb6h9MbnK0y05FSfKBNPwJx7loiBIqDTkCaFjnMM5FS5WWZkGJ-BsatA4rZc217gClKWQnVQYbkaKF5-aRRciEvHiqRdQPvSVFqbfBibZoZblgSDxHz7Y5Va-24_xP4bP6RQ?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">וואן פיס עונה 1 פרק 26 - חלומם של סאנג&#039;י וזף! ים החלומות- הכחול הגדול לצפייה ישירה בחינם בעברית | MSDB</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">1. 🌱 Apprentice Cook</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Learn basic cooking, physical conditioning, balance, and combat movements.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">2. ⚡ Black Leg Fighter</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Develop powerful kicks, agility, and hand-to-hand combat skills.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/PtqFeKI913IUkm4u9VJ2eoLjsPcvB1rwpHQI6moKXlYAXlf7mRbvRBm7GRWKmnoRdHI0sKQbNazFcRrGDChwAN-_4CBDW4XXDCHIYdGwJEhXPKTi6V91cZf_GzQTjEsrs4aAevkjkqou0iqs_spsnlD6K5lIKRVoiykQLbjQhWc?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ONE PIECE | エニエス・ロビー編アニメサブタイトル一覧</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">3. 🔥 Flame Warrior</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Unlock Diable Jambe and develop stronger combat abilities.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/vH2Gt4-mg2DLL4LOgeDLx_NKUvLOaIYEOxxfSnEiyNDyIjWVyxILfU3aYOZ7hdlwGHx-vbFDQx06Fd7HytrxpUTIUJAKuiFfV-8DeO4dZo7QF0KD6wh2FzSw_8uGjTzzvTmGEcIhNKj8zr3efT2xdSZJknawJpivFqBS_9ZHWE4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: Wano Country Arc - The Strike of an Ifrit! Sanji vs. Queen (2023) - (S21E1061) - Backdrops — The Movie Database (TMDB)</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">4. 👑 Enhanced Warrior</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Awaken Germa enhancements, improve durability, and develop advanced Haki.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/pTLKlQy40lOeyK2EpHgvVZgxDVr_PBzkHaFyqQDVhckp-87pW-u9cI9lhTYRGI4UbswRRfTPDudX-PnNt5p5tsAwWc6HUg4j8qq-k0pQfHQsrKXUbKDU4llEHGDuvngyw_XZVWdt53ABcp-fwMkO6HYMylKvRo4DkgeMxQJEJEA?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece episode 1061&#039;s climactic showdown sees Sanji unleashing his greatest trump card</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">5. 🌌 Ultimate Black Leg</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Master Ifrit Jambe, exceptional speed, Haki, and enhanced physical abilities.</p>
-<h3 id="heading-104-sanji-s-core-attributes" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/6MGG1qXNu1qgUKU_cBJPWyU22VDB2OQlL7sYQTwzb6h9MbnK0y05FSfKBNPwJx7loiBIqDTkCaFjnMM5FS5WWZkGJ-BsatA4rZc217gClKWQnVQYbkaKF5-aRRciEvHiqRdQPvSVFqbfBibZoZblgSDxHz7Y5Va-24_xP4bP6RQ?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">וואן פיס עונה 1 פרק 26 - חלומם של סאנג&#039;י וזף! ים החלומות- הכחול הגדול לצפייה ישירה בחינם בעברית | MSDB</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">1. 🌱 Apprentice Cook</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Learn basic cooking, physical conditioning, balance, and combat movements.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">2. ⚡ Black Leg Fighter</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Develop powerful kicks, agility, and hand-to-hand combat skills.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/PtqFeKI913IUkm4u9VJ2eoLjsPcvB1rwpHQI6moKXlYAXlf7mRbvRBm7GRWKmnoRdHI0sKQbNazFcRrGDChwAN-_4CBDW4XXDCHIYdGwJEhXPKTi6V91cZf_GzQTjEsrs4aAevkjkqou0iqs_spsnlD6K5lIKRVoiykQLbjQhWc?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ONE PIECE | エニエス・ロビー編アニメサブタイトル一覧</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">3. 🔥 Flame Warrior</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Unlock Diable Jambe and develop stronger combat abilities.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/vH2Gt4-mg2DLL4LOgeDLx_NKUvLOaIYEOxxfSnEiyNDyIjWVyxILfU3aYOZ7hdlwGHx-vbFDQx06Fd7HytrxpUTIUJAKuiFfV-8DeO4dZo7QF0KD6wh2FzSw_8uGjTzzvTmGEcIhNKj8zr3efT2xdSZJknawJpivFqBS_9ZHWE4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: Wano Country Arc - The Strike of an Ifrit! Sanji vs. Queen (2023) - (S21E1061) - Backdrops — The Movie Database (TMDB)</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">4. 👑 Enhanced Warrior</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Awaken Germa enhancements, improve durability, and develop advanced Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/pTLKlQy40lOeyK2EpHgvVZgxDVr_PBzkHaFyqQDVhckp-87pW-u9cI9lhTYRGI4UbswRRfTPDudX-PnNt5p5tsAwWc6HUg4j8qq-k0pQfHQsrKXUbKDU4llEHGDuvngyw_XZVWdt53ABcp-fwMkO6HYMylKvRo4DkgeMxQJEJEA?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece episode 1061&#039;s climactic showdown sees Sanji unleashing his greatest trump card</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">5. 🌌 Ultimate Black Leg</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Master Ifrit Jambe, exceptional speed, Haki, and enhanced physical abilities.</p>
+<h3 id="heading-104-sanji-s-core-attributes" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🧬 Sanji&#039;s Core Attributes</span>
           <a href="#heading-104-sanji-s-core-attributes" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<h2 id="heading-106-6-the-science-of-germa-66" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<div class="my-6 overflow-x-auto rounded-xl border border-[var(--border-color)] shadow-xs">
+            <table class="min-w-full divide-y divide-[var(--border-color)] text-left text-sm text-[var(--text-main)]">
+              <tbody class="divide-y divide-[var(--border-color)] bg-[var(--bg-card)]">
+                <tr>
+                    <th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th><th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+<h2 id="heading-106-6-the-science-of-germa-66" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🧪 6. The Science of Germa 66</span>
           <a href="#heading-106-6-the-science-of-germa-66" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/tnaFjRqYVXnS-NrIsQlHDW62lix0jO8BA8fUEqjdLSd6MB7HdioAt9x_iRuodxGeL1CHEVrGxVNw86Dz9ospoGtkkBHN9vHCYrvr61Q1G9DS2nvuGjWbe3Gkj9WXHxy_qT5PlpsQJg1Mh1LcShEK6AZcT-qMN2HAXCmNvIGDVW4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">第873話 起死回生　最強の援軍ジェルマ！ | TVアニメ | ONE PIECE.com（ワンピース ドットコム）</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://one-piece.com/anime/o4967/index.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">one-piece.com</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji&#039;s family, the Vinsmokes, belong to the technologically advanced Germa Kingdom.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Germa 66 is known for its scientific experiments, enhanced soldiers, and advanced combat technology.</p>
-<h3 id="heading-111-sanji-s-genetic-enhancements" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/tnaFjRqYVXnS-NrIsQlHDW62lix0jO8BA8fUEqjdLSd6MB7HdioAt9x_iRuodxGeL1CHEVrGxVNw86Dz9ospoGtkkBHN9vHCYrvr61Q1G9DS2nvuGjWbe3Gkj9WXHxy_qT5PlpsQJg1Mh1LcShEK6AZcT-qMN2HAXCmNvIGDVW4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">第873話 起死回生　最強の援軍ジェルマ！ | TVアニメ | ONE PIECE.com（ワンピース ドットコム）</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://one-piece.com/anime/o4967/index.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">one-piece.com</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji&#039;s family, the Vinsmokes, belong to the technologically advanced Germa Kingdom.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Germa 66 is known for its scientific experiments, enhanced soldiers, and advanced combat technology.</p>
+<h3 id="heading-111-sanji-s-genetic-enhancements" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>Sanji&#039;s Genetic Enhancements</span>
           <a href="#heading-111-sanji-s-genetic-enhancements" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>💪 Enhanced physical strength.</li>
-<li>🛡️ Extraordinary durability.</li>
-<li>⚡ Increased movement speed.</li>
-<li>❤️ Accelerated recovery.</li>
-<li>🔥 Greater combat potential when combined with his fighting techniques.</li>
+<li class="">💪 Enhanced physical strength.</li>
+<li class="">🛡️ Extraordinary durability.</li>
+<li class="">⚡ Increased movement speed.</li>
+<li class="">❤️ Accelerated recovery.</li>
+<li class="">🔥 Greater combat potential when combined with his fighting techniques.</li>
 </ul>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Unlike his siblings, Sanji&#039;s story is also about accepting his humanity and choosing kindness over cruelty.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">His greatest strength isn&#039;t just his genetic power. It&#039;s the humanity he refuses to lose.</p>
-<h2 id="heading-119-7-the-art-of-legendary-cooking" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Unlike his siblings, Sanji&#039;s story is also about accepting his humanity and choosing kindness over cruelty.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">His greatest strength isn&#039;t just his genetic power. It&#039;s the humanity he refuses to lose.</p>
+<h2 id="heading-119-7-the-art-of-legendary-cooking" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🍳 7. The Art of Legendary Cooking</span>
           <a href="#heading-119-7-the-art-of-legendary-cooking" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/An62-_9m1onuO6uqaV57ULF7mvYjCJCQJbiOw4WSewzoTunbs32QkmLja9jGE12u4raz-XdkYl-GrnXoQFb421U0r8gVvBJYvEenHqxaNLdimVIGaKRhmTwsrSV5bZYO1xxc_dPkvmWwT7tx1L5Nk-l_SQKZlEAvMT04yyyfd-8?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">24 &#039;One Piece&#039; Fans Share Their Headcanons About Sanji</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/KZPhT5_R8oyiCZ3OjduPQNuNzapKd_uzb1dsNUG2MS0VqSF2ns141zWOgph_bViRGqyHkusyukrD3MDNopu8DSD_xchpFwodC9q9CDOUzISjQ4T9w-ZJKKi7ajVNKqaAgBJO16w7XRqqN_bG9zjbJl2JlTS7rox7h5HD-zUw6YM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Секрет популярности Ван-Пис: культовый сёнэн о пиратах</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/aTGBMOX51gP21pY1bFc-mgY76fhG4HDq62PUaRcuzAwOcoHyGqmLSYu1DdTttjYHAwKCzOfKMq90ggPX-40Wk8zP-7FKr4JteGhVzJKy2J8jeJz6ssixkJwMpudW1ttzKKhF316D8fuU1iQdtWePSTDcBNQp7Ql5fxZTd94bP7g?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: sí, Sanji tendrá su propio libro de cocina</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">10</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji isn&#039;t just a fighter. He is a chef who believes that food should never be denied to someone who is hungry.</p>
-<h3 id="heading-125-his-culinary-skills" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/An62-_9m1onuO6uqaV57ULF7mvYjCJCQJbiOw4WSewzoTunbs32QkmLja9jGE12u4raz-XdkYl-GrnXoQFb421U0r8gVvBJYvEenHqxaNLdimVIGaKRhmTwsrSV5bZYO1xxc_dPkvmWwT7tx1L5Nk-l_SQKZlEAvMT04yyyfd-8?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">24 &#039;One Piece&#039; Fans Share Their Headcanons About Sanji</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/KZPhT5_R8oyiCZ3OjduPQNuNzapKd_uzb1dsNUG2MS0VqSF2ns141zWOgph_bViRGqyHkusyukrD3MDNopu8DSD_xchpFwodC9q9CDOUzISjQ4T9w-ZJKKi7ajVNKqaAgBJO16w7XRqqN_bG9zjbJl2JlTS7rox7h5HD-zUw6YM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Секрет популярности Ван-Пис: культовый сёнэн о пиратах</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/aTGBMOX51gP21pY1bFc-mgY76fhG4HDq62PUaRcuzAwOcoHyGqmLSYu1DdTttjYHAwKCzOfKMq90ggPX-40Wk8zP-7FKr4JteGhVzJKy2J8jeJz6ssixkJwMpudW1ttzKKhF316D8fuU1iQdtWePSTDcBNQp7Ql5fxZTd94bP7g?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: sí, Sanji tendrá su propio libro de cocina</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">10</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji isn&#039;t just a fighter. He is a chef who believes that food should never be denied to someone who is hungry.</p>
+<h3 id="heading-125-his-culinary-skills" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>His Culinary Skills</span>
           <a href="#heading-125-his-culinary-skills" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>🥩 Meat preparation and cooking.</li>
-<li>🍜 Mastering soups, noodles, and seafood.</li>
-<li>🍰 Creating extraordinary desserts.</li>
-<li>🐟 Preparing rare ocean ingredients.</li>
-<li>🌿 Understanding nutrition and ingredients.</li>
-<li>🍽️ Designing beautiful restaurant-quality meals.</li>
+<li class="">🥩 Meat preparation and cooking.</li>
+<li class="">🍜 Mastering soups, noodles, and seafood.</li>
+<li class="">🍰 Creating extraordinary desserts.</li>
+<li class="">🐟 Preparing rare ocean ingredients.</li>
+<li class="">🌿 Understanding nutrition and ingredients.</li>
+<li class="">🍽️ Designing beautiful restaurant-quality meals.</li>
 </ul>
-<h3 id="heading-132-the-five-rules-of-sanji" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h3 id="heading-132-the-five-rules-of-sanji" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>The Five Rules of Sanji</span>
           <a href="#heading-132-the-five-rules-of-sanji" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ol class="list-decimal pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Never waste food.</li>
-<li>Never let someone starve.</li>
-<li>Respect every ingredient.</li>
-<li>Protect the people who share your table.</li>
-<li>Never abandon your dream of finding the All Blue.</li>
+<li class="">Never waste food.</li>
+<li class="">Never let someone starve.</li>
+<li class="">Respect every ingredient.</li>
+<li class="">Protect the people who share your table.</li>
+<li class="">Never abandon your dream of finding the All Blue.</li>
 </ol>
-<h2 id="heading-138-8-my-sanji-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-138-8-my-sanji-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🎯 8. My Sanji World-Building Checklist</span>
           <a href="#heading-138-8-my-sanji-world-building-checklist" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Design the legendary All Blue ocean map.</li>
-<li>Create seven unique culinary kingdoms.</li>
-<li>Develop the world&#039;s greatest chefs.</li>
-<li>Design mysterious underwater civilizations.</li>
-<li>Create rare and legendary ocean ingredients.</li>
-<li>Develop unique cooking techniques.</li>
-<li>Build the history of Germa 66.</li>
-<li>Create powerful rival chefs and warriors.</li>
-<li>Design legendary restaurants and floating kitchens.</li>
-<li>Write the story of Sanji&#039;s greatest culinary adventure.</li>
-<li>Create the ultimate All Blue discovery arc.</li>
+<li class="">Design the legendary All Blue ocean map.</li>
+<li class="">Create seven unique culinary kingdoms.</li>
+<li class="">Develop the world&#039;s greatest chefs.</li>
+<li class="">Design mysterious underwater civilizations.</li>
+<li class="">Create rare and legendary ocean ingredients.</li>
+<li class="">Develop unique cooking techniques.</li>
+<li class="">Build the history of Germa 66.</li>
+<li class="">Create powerful rival chefs and warriors.</li>
+<li class="">Design legendary restaurants and floating kitchens.</li>
+<li class="">Write the story of Sanji&#039;s greatest culinary adventure.</li>
+<li class="">Create the ultimate All Blue discovery arc.</li>
 </ul>
-<h2 id="heading-150-9-legendary-quotes-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-150-9-legendary-quotes-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>✨ 9. Legendary Quotes &amp; Philosophy</span>
           <a href="#heading-150-9-legendary-quotes-philosophy" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🍳 About Cooking</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;A cook&#039;s job is to feed the hungry.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji&#039;s philosophy of compassion and food.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">💛 About Kindness</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A person who cannot respect food cannot understand the value of life.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🔥 About Strength</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Real strength means having the power to protect others without losing yourself.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🌊 About Dreams</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The greatest treasures are worth crossing every ocean to find.</p>
-<h2 id="heading-160-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🍳 About Cooking</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;A cook&#039;s job is to feed the hungry.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji&#039;s philosophy of compassion and food.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">💛 About Kindness</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A person who cannot respect food cannot understand the value of life.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🔥 About Strength</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Real strength means having the power to protect others without losing yourself.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🌊 About Dreams</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The greatest treasures are worth crossing every ocean to find.</p>
+<h2 id="heading-160-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🌊 Final Thoughts</span>
           <a href="#heading-160-final-thoughts" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Sanji represents something greater than fighting and cooking.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He represents kindness in a cruel world, passion in everything he does, and the courage to remain himself despite his past.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He fights with his legs, creates magic in the kitchen, and dreams of discovering an ocean that brings the entire world together.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">One chef. One burning passion. One legendary ocean.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🔥 Cook with passion. Fight with honor. Protect the hungry. Find the All Blue.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Sanji represents something greater than fighting and cooking.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He represents kindness in a cruel world, passion in everything he does, and the courage to remain himself despite his past.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He fights with his legs, creates magic in the kitchen, and dreams of discovering an ocean that brings the entire world together.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">One chef. One burning passion. One legendary ocean.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🔥 Cook with passion. Fight with honor. Protect the hungry. Find the All Blue.</p>
 
       </article>
 

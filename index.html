@@ -77,6 +77,26 @@
       --text-muted: #6f6e69;
       --text-dim: #9b9a95;
       --primary-color: #6366f1;
+
+      /* BlockNote colors - Light */
+      --bn-color-gray: #9b9a97;
+      --bn-bg-gray: #ebeced;
+      --bn-color-brown: #64473a;
+      --bn-bg-brown: #e9e5e3;
+      --bn-color-red: #e03e3e;
+      --bn-bg-red: #fbe4e4;
+      --bn-color-orange: #d9730d;
+      --bn-bg-orange: #f6e9d9;
+      --bn-color-yellow: #dfab01;
+      --bn-bg-yellow: #fbf3db;
+      --bn-color-green: #4d6461;
+      --bn-bg-green: #ddedea;
+      --bn-color-blue: #0b6e99;
+      --bn-bg-blue: #ddebf1;
+      --bn-color-purple: #6940a5;
+      --bn-bg-purple: #eae4f2;
+      --bn-color-pink: #ad1a72;
+      --bn-bg-pink: #f4dfeb;
     }
 
     html.dark {
@@ -91,6 +111,51 @@
       --text-muted: #949494;
       --text-dim: #666666;
       --primary-color: #818cf8;
+
+      /* BlockNote colors - Dark */
+      --bn-color-gray: #bebdb8;
+      --bn-bg-gray: #454b4e;
+      --bn-color-brown: #8e6552;
+      --bn-bg-brown: #604b44;
+      --bn-color-red: #ec4040;
+      --bn-bg-red: #be3434;
+      --bn-color-orange: #e3790d;
+      --bn-bg-orange: #854c1d;
+      --bn-color-yellow: #dfab01;
+      --bn-bg-yellow: #89632a;
+      --bn-color-green: #6b8b87;
+      --bn-bg-green: #2b593f;
+      --bn-color-blue: #0e87bc;
+      --bn-bg-blue: #28456c;
+      --bn-color-purple: #8552d7;
+      --bn-bg-purple: #492f64;
+      --bn-color-pink: #da208f;
+      --bn-bg-pink: #69314c;
+    }
+
+    .bn-bg-gray { background-color: var(--bn-bg-gray) !important; }
+    .bn-bg-brown { background-color: var(--bn-bg-brown) !important; }
+    .bn-bg-red { background-color: var(--bn-bg-red) !important; }
+    .bn-bg-orange { background-color: var(--bn-bg-orange) !important; }
+    .bn-bg-yellow { background-color: var(--bn-bg-yellow) !important; }
+    .bn-bg-green { background-color: var(--bn-bg-green) !important; }
+    .bn-bg-blue { background-color: var(--bn-bg-blue) !important; }
+    .bn-bg-purple { background-color: var(--bn-bg-purple) !important; }
+    .bn-bg-pink { background-color: var(--bn-bg-pink) !important; }
+
+    .bn-text-gray { color: var(--bn-color-gray) !important; }
+    .bn-text-brown { color: var(--bn-color-brown) !important; }
+    .bn-text-red { color: var(--bn-color-red) !important; }
+    .bn-text-orange { color: var(--bn-color-orange) !important; }
+    .bn-text-yellow { color: var(--bn-color-yellow) !important; }
+    .bn-text-green { color: var(--bn-color-green) !important; }
+    .bn-text-blue { color: var(--bn-color-blue) !important; }
+    .bn-text-purple { color: var(--bn-color-purple) !important; }
+    .bn-text-pink { color: var(--bn-color-pink) !important; }
+
+    /* In dark mode, ensure high contrast white text for solid colored block backgrounds unless text color is explicitly styled */
+    html.dark .bn-block-bg:not([class*="bn-text-"]) {
+      color: #ffffff !important;
     }
 
     body {
@@ -344,252 +409,315 @@
 
       <!-- Article Body -->
       <article class="space-y-2 text-[var(--text-main)] text-sm sm:text-base leading-relaxed">
-        <h1 id="heading-0-the-world-of-one-piece" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+        <h1 id="heading-0-the-world-of-one-piece" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>⚔️ The World of One Piece</span>
           <a href="#heading-0-the-world-of-one-piece" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h1>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The Journey of Roronoa Zoro, The World&#039;s Greatest Swordsman</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Welcome to a world where swords decide destinies, warriors are born through endless battles, and an unbreakable promise drives one swordsman toward the greatest title in the world.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A  Youtube botton here world where strength is earned through discipline, loyalty is stronger than fear, and every scar tells a story.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ 1. The Legend of the Three-Sword Style</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Imagine a world where legendary swordsmen travel across dangerous oceans, searching for powerful blades, challenging mighty warriors, and protecting the dreams of those they believe in.</p>
-<h3 id="heading-7-the-seven-legendary-sword-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The Journey of Roronoa Zoro, The World&#039;s Greatest Swordsman</p>
+<p class="leading-relaxed  text-[var(--text-main)] bn-bg-red bn-block-bg rounded-lg px-4 py-2.5 my-2.5">Welcome to a world where swords decide destinies, warriors are born through endless battles, and an unbreakable promise drives one swordsman toward the greatest title in the world.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A  Youtube botton here world where strength is earned through discipline, loyalty is stronger than fear, and every scar tells a story.</p>
+<figure class="my-6 w-full">
+      <div class="relative w-full aspect-video rounded-xl border border-[var(--border-color)] bg-black overflow-hidden shadow-md">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/Zuu6ClXRabE?rel=0"
+          title="YouTube Video"
+          class="absolute inset-0 h-full w-full border-0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      
+    </figure>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">⚔️ 1. The Legend of the Three-Sword Style</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Imagine a world where legendary swordsmen travel across dangerous oceans, searching for powerful blades, challenging mighty warriors, and protecting the dreams of those they believe in.</p>
+<h3 id="heading-7-the-seven-legendary-sword-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🌍 The Seven Legendary Sword Regions</span>
           <a href="#heading-7-the-seven-legendary-sword-regions" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>🏯 Wano Country – A land of samurai, ancient traditions, and legendary swordsmiths.</li>
-<li>🌋 Blazing Forge Island – A volcanic island where the world&#039;s strongest swords are created.</li>
-<li>❄️ Frostfang Mountains – A frozen battlefield where warriors test their endurance.</li>
-<li>🌸 Sakura Province – A peaceful region hiding the graves of legendary samurai.</li>
-<li>🌑 Shadowblade Territory – A mysterious kingdom ruled by merciless swordsmen.</li>
-<li>⚡ Thunder Peak – A dangerous mountain where warriors train their speed and reflexes.</li>
-<li>🏴‍☠️ Grand Line – An unpredictable ocean where the world&#039;s greatest fighters compete for glory.</li>
+<li class="">🏯 Wano Country – A land of samurai, ancient traditions, and legendary swordsmiths.</li>
+<li class="">🌋 Blazing Forge Island – A volcanic island where the world&#039;s strongest swords are created.</li>
+<li class="">❄️ Frostfang Mountains – A frozen battlefield where warriors test their endurance.</li>
+<li class="">🌸 Sakura Province – A peaceful region hiding the graves of legendary samurai.</li>
+<li class="">🌑 Shadowblade Territory – A mysterious kingdom ruled by merciless swordsmen.</li>
+<li class="">⚡ Thunder Peak – A dangerous mountain where warriors train their speed and reflexes.</li>
+<li class="">🏴‍☠️ Grand Line – An unpredictable ocean where the world&#039;s greatest fighters compete for glory.</li>
 </ul>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Every region has its own sword traditions, legendary masters, ancient weapons, and forgotten fighting techniques.</p>
-<h2 id="heading-16-2-legendary-character-roronoa-zoro" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Every region has its own sword traditions, legendary masters, ancient weapons, and forgotten fighting techniques.</p>
+<h2 id="heading-16-2-legendary-character-roronoa-zoro" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>👑 2. Legendary Character: Roronoa Zoro</span>
           <a href="#heading-16-2-legendary-character-roronoa-zoro" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Discipline, loyalty, determination, and overwhelming swordsmanship.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/QYf96n4PjMljiwWDDUL9f86dqadxC9aeRtrhjEbdahAWvdRU5XJ0qyJwBPzrM9_Pfxgyc3lZsYAPY6E4oTyINvrSwWlBb-kK_bnwSsu7iaP3JFrA3gbr8KWkDXvVu8kyNZm1XytW1Dp19weFS94uPdM1-4HZSjJzHWjspQy2yP4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: perché quel combattimento sta impegnando Zoro così a lungo?</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/LrXMkTtDSmkqQ-9DvUBr7qICR3VP7UPdFAMyEHEFu_sSurBua9b_hknpqzRolygUktLHBV-NoYfdifwcoMlQBfKNxhEJadgKd6oJo8o2sQRP6mMCEEnLGFGlu7bASbDUGXwCGOqhJzhUQxnisZvuWf_ETCBT65XT6ehLVQQXjaw?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Steam Workshop::ZORO KING OF HELL one piece HD</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/WnsqDrOR1sJP-mJtUkg2o8ys0uOXtPxsjLEvR3lFIw1qq6v4tyb4DET0uyWRnS8L8L3Ian1uT0k1UwtpCxxubMfpy6E2bCwNIkTFw6OJpV2Op5Ig2FBQfQkoUd7D7xNKh0KuS8QfM2HOp4jWX-N-5CesGhmg_BIEzSJ7dPL2sPo?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro les regaló a los fans de &#039;One Piece&#039; la pelea más espectacular del anime | Entretenimiento Cine y Series | Univision</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">10</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Roronoa Zoro is one of the most powerful and determined swordsmen in the One Piece universe.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">His dream is simple but almost impossible: become the World&#039;s Greatest Swordsman.</p>
-<h3 id="heading-24-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Discipline, loyalty, determination, and overwhelming swordsmanship.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/QYf96n4PjMljiwWDDUL9f86dqadxC9aeRtrhjEbdahAWvdRU5XJ0qyJwBPzrM9_Pfxgyc3lZsYAPY6E4oTyINvrSwWlBb-kK_bnwSsu7iaP3JFrA3gbr8KWkDXvVu8kyNZm1XytW1Dp19weFS94uPdM1-4HZSjJzHWjspQy2yP4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: perché quel combattimento sta impegnando Zoro così a lungo?</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/LrXMkTtDSmkqQ-9DvUBr7qICR3VP7UPdFAMyEHEFu_sSurBua9b_hknpqzRolygUktLHBV-NoYfdifwcoMlQBfKNxhEJadgKd6oJo8o2sQRP6mMCEEnLGFGlu7bASbDUGXwCGOqhJzhUQxnisZvuWf_ETCBT65XT6ehLVQQXjaw?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Steam Workshop::ZORO KING OF HELL one piece HD</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/WnsqDrOR1sJP-mJtUkg2o8ys0uOXtPxsjLEvR3lFIw1qq6v4tyb4DET0uyWRnS8L8L3Ian1uT0k1UwtpCxxubMfpy6E2bCwNIkTFw6OJpV2Op5Ig2FBQfQkoUd7D7xNKh0KuS8QfM2HOp4jWX-N-5CesGhmg_BIEzSJ7dPL2sPo?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro les regaló a los fans de &#039;One Piece&#039; la pelea más espectacular del anime | Entretenimiento Cine y Series | Univision</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">10</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Roronoa Zoro is one of the most powerful and determined swordsmen in the One Piece universe.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">His dream is simple but almost impossible: become the World&#039;s Greatest Swordsman.</p>
+<h3 id="heading-24-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>⚔️ Character Profile</span>
           <a href="#heading-24-character-profile" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<h3 id="heading-26-his-legendary-swords" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<div class="my-6 overflow-x-auto rounded-xl border border-[var(--border-color)] shadow-xs">
+            <table class="min-w-full divide-y divide-[var(--border-color)] text-left text-sm text-[var(--text-main)]">
+              <tbody class="divide-y divide-[var(--border-color)] bg-[var(--bg-card)]">
+                <tr>
+                    <th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th><th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+<h3 id="heading-26-his-legendary-swords" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>💚 His Legendary Swords</span>
           <a href="#heading-26-his-legendary-swords" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/192CAnT71UHFPqpbRB8PVyR-ReGYaK6CW8xIYemxzfiIHtt12obrmiKFgjMf8QscUjACeQsCdH93juwUc6dt3VqacxK7SFR3Srfhe8cV4eoXipWl_iYR4VcEoDHeA8FobSi-I-pwwTpGyMDqCHMVK6CPPHk0IyllrPZU99f2wxI?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">1095 High Carbon Steel White One Piece Roronoa Zoro&#039;s Wado Ichimonji Katana Sword | COOLKATANA</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">1. Wado Ichimonji</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A precious sword connected to Zoro&#039;s childhood promise to Kuina. It represents his dream and determination.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/55ifg7cZafr5eBS1itGIQATgdTfPvQ6plmDH8wJV1i0XpNYU_olVZ8obhUIUvFHum0sz_cP1dgyZV2OYVAgtvNDNUbgkidQe9VChV3GH6lJBQFbAzoCs1VFU-e-TiqaaKaG8DzPEWYZQCem0H_91dVV_yb01S7gYOoY5kg_wxts?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Enma | Katana</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">2. Enma</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A legendary blade that draws out its wielder&#039;s Haki and demands extraordinary control.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/HfbZK3boDi8G4Dlxlic7-ftJQKruwewON2LZLA4D4nY40-3x08htenlDHY0s5GYRXqJYzBYOERRjetcis9TPkxkofYb3_qxL4Vk9HHy1ICJF7_exCSFqkFpPtVYBjJMabt-VrJYy688suqJ4AsG2V3gISvnyGguaJIyKQjZdc7E?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro Sword | Roronoa Zoro Sandai Kitetsu - One Piece Cursed Sword Replica, 1045 Carbon Steel, Red Saya - TrueKatana</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">3. Sandai Kitetsu</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A cursed sword with a dangerous reputation, chosen by Zoro despite its deadly history.</p>
-<h3 id="heading-36-his-legendary-techniques" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/192CAnT71UHFPqpbRB8PVyR-ReGYaK6CW8xIYemxzfiIHtt12obrmiKFgjMf8QscUjACeQsCdH93juwUc6dt3VqacxK7SFR3Srfhe8cV4eoXipWl_iYR4VcEoDHeA8FobSi-I-pwwTpGyMDqCHMVK6CPPHk0IyllrPZU99f2wxI?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">1095 High Carbon Steel White One Piece Roronoa Zoro&#039;s Wado Ichimonji Katana Sword | COOLKATANA</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">1. Wado Ichimonji</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A precious sword connected to Zoro&#039;s childhood promise to Kuina. It represents his dream and determination.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/55ifg7cZafr5eBS1itGIQATgdTfPvQ6plmDH8wJV1i0XpNYU_olVZ8obhUIUvFHum0sz_cP1dgyZV2OYVAgtvNDNUbgkidQe9VChV3GH6lJBQFbAzoCs1VFU-e-TiqaaKaG8DzPEWYZQCem0H_91dVV_yb01S7gYOoY5kg_wxts?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Enma | Katana</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">2. Enma</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A legendary blade that draws out its wielder&#039;s Haki and demands extraordinary control.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/HfbZK3boDi8G4Dlxlic7-ftJQKruwewON2LZLA4D4nY40-3x08htenlDHY0s5GYRXqJYzBYOERRjetcis9TPkxkofYb3_qxL4Vk9HHy1ICJF7_exCSFqkFpPtVYBjJMabt-VrJYy688suqJ4AsG2V3gISvnyGguaJIyKQjZdc7E?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro Sword | Roronoa Zoro Sandai Kitetsu - One Piece Cursed Sword Replica, 1045 Carbon Steel, Red Saya - TrueKatana</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">3. Sandai Kitetsu</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A cursed sword with a dangerous reputation, chosen by Zoro despite its deadly history.</p>
+<h3 id="heading-36-his-legendary-techniques" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🔥 His Legendary Techniques</span>
           <a href="#heading-36-his-legendary-techniques" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/t6Udnqhp8v0rsA00fd3KFBr7a2IXrecwbvD5eXG4afJRB2Fm2z-FNBIBTBc-p2Tujb2nGDidQNLGhYEBmt8nmrwsKmzBmzRm0hy2O9B80KY9a76P4jVTdZpR34Qt0ffTNE3wmzB277tIDHW0n5gDLK-J_RsUGRAgcfQ-DUFdaEk?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Le tecniche di spada più potenti di Roronoa Zoro in One Piece</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">1. Oni Giri</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A signature three-sword technique delivering a powerful cross-shaped slash.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/eJuGfhhbpqFZybmDgbzPaGe6ErKTiIIpYb_d4NOEvEkQhU_W0LJgPL3SggmTLXZtwlolsrHCIHOtJhwWeUTq05UNoYvzHjzuJuqDmWcQDxeXs_9bk4aX5wCVu099trndfQc8pz1IV5eyuO82quCgHkpdVBtPFQAJt5kQYuSABYQ?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">索隆是怎么变成九刀流的，有多猛-百度经验</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">2. Asura</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious technique that creates the appearance of a nine-sword, three-headed warrior.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/655CPk4-4qXtV5eR7odVzR9i4umX-vxvOMBl2pjSq_Rk2UFABCjnFizxYixsK2_QSbd_BQAo-vgVfDqNhp4HvUUdSvLBiYwj-TIE5Y1HyWXO4A2KNEvcKKY2cQqW8hfBVU67h4yewJVBoGUlj6bJG9HVxNgW10YZQWjha7jnJnE?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Los 10 ataques más poderosos en One Piece (hasta ahora) | Cultture</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">3. King of Hell: Three-Sword Serpent</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">An advanced fighting style combining powerful swordsmanship with Conqueror&#039;s Haki.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/sK-JzbjWS7BMg3k9yCz9JQicJhio-ed6PZRsKpOmoSO3GLCysg1WjG1y5x_D2AGpqJFTSUHGWyLOy0Me7koaQx7lFWZ6S0RDUfqJ_zivJoY5hb7952WS5niDjOGFHzbsM2bOV8z72awxaLeXWRsnsQFo7R9hH1Ucuok58hh1m7o?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro&#039;s Three Sword Style- Purgatory Onigiri!... - BiliBili</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">4. Purgatory Onigiri</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A devastating advanced variation of his signature Oni Giri technique.</p>
-<h3 id="heading-49-his-haki-mastery" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/t6Udnqhp8v0rsA00fd3KFBr7a2IXrecwbvD5eXG4afJRB2Fm2z-FNBIBTBc-p2Tujb2nGDidQNLGhYEBmt8nmrwsKmzBmzRm0hy2O9B80KY9a76P4jVTdZpR34Qt0ffTNE3wmzB277tIDHW0n5gDLK-J_RsUGRAgcfQ-DUFdaEk?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Le tecniche di spada più potenti di Roronoa Zoro in One Piece</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">1. Oni Giri</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A signature three-sword technique delivering a powerful cross-shaped slash.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/eJuGfhhbpqFZybmDgbzPaGe6ErKTiIIpYb_d4NOEvEkQhU_W0LJgPL3SggmTLXZtwlolsrHCIHOtJhwWeUTq05UNoYvzHjzuJuqDmWcQDxeXs_9bk4aX5wCVu099trndfQc8pz1IV5eyuO82quCgHkpdVBtPFQAJt5kQYuSABYQ?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">索隆是怎么变成九刀流的，有多猛-百度经验</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">2. Asura</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A mysterious technique that creates the appearance of a nine-sword, three-headed warrior.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/655CPk4-4qXtV5eR7odVzR9i4umX-vxvOMBl2pjSq_Rk2UFABCjnFizxYixsK2_QSbd_BQAo-vgVfDqNhp4HvUUdSvLBiYwj-TIE5Y1HyWXO4A2KNEvcKKY2cQqW8hfBVU67h4yewJVBoGUlj6bJG9HVxNgW10YZQWjha7jnJnE?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Los 10 ataques más poderosos en One Piece (hasta ahora) | Cultture</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">3. King of Hell: Three-Sword Serpent</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">An advanced fighting style combining powerful swordsmanship with Conqueror&#039;s Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/sK-JzbjWS7BMg3k9yCz9JQicJhio-ed6PZRsKpOmoSO3GLCysg1WjG1y5x_D2AGpqJFTSUHGWyLOy0Me7koaQx7lFWZ6S0RDUfqJ_zivJoY5hb7952WS5niDjOGFHzbsM2bOV8z72awxaLeXWRsnsQFo7R9hH1Ucuok58hh1m7o?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Zoro&#039;s Three Sword Style- Purgatory Onigiri!... - BiliBili</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">4. Purgatory Onigiri</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A devastating advanced variation of his signature Oni Giri technique.</p>
+<h3 id="heading-49-his-haki-mastery" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>👑 His Haki Mastery</span>
           <a href="#heading-49-his-haki-mastery" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>⚡ Conqueror&#039;s Haki – The rare power of a king, allowing him to overwhelm opponents with sheer will.</li>
-<li>🛡️ Armament Haki – Strengthens his swords and attacks with powerful Haki.</li>
-<li>👁️ Observation Haki – Helps him sense opponents and anticipate movements.</li>
+<li class="">⚡ Conqueror&#039;s Haki – The rare power of a king, allowing him to overwhelm opponents with sheer will.</li>
+<li class="">🛡️ Armament Haki – Strengthens his swords and attacks with powerful Haki.</li>
+<li class="">👁️ Observation Haki – Helps him sense opponents and anticipate movements.</li>
 </ul>
-<h3 id="heading-53-why-zoro-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h3 id="heading-53-why-zoro-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>💎 Why Zoro Is So Powerful</span>
           <a href="#heading-53-why-zoro-is-so-powerful" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Exceptional swordsmanship and combat instincts.</li>
-<li>Extraordinary physical strength and endurance.</li>
-<li>Mastery of the Three-Sword Style.</li>
-<li>Powerful Armament and Conqueror&#039;s Haki.</li>
-<li>Unbreakable determination, even in the face of defeat.</li>
-<li>Absolute loyalty to his captain and crew.</li>
+<li class="">Exceptional swordsmanship and combat instincts.</li>
+<li class="">Extraordinary physical strength and endurance.</li>
+<li class="">Mastery of the Three-Sword Style.</li>
+<li class="">Powerful Armament and Conqueror&#039;s Haki.</li>
+<li class="">Unbreakable determination, even in the face of defeat.</li>
+<li class="">Absolute loyalty to his captain and crew.</li>
 </ul>
-<h2 id="heading-60-3-an-original-story-the-swordsman-s-last-promise" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-60-3-an-original-story-the-swordsman-s-last-promise" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>📖 3. An Original Story: The Swordsman&#039;s Last Promise</span>
           <a href="#heading-60-3-an-original-story-the-swordsman-s-last-promise" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Chapter 01 – The Blade That Never Breaks</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/y_VlKIY0t4LZQdRQ--jvElohQz-HpBEcVraFsCscfOPqSYVbYa0y31m-YGYK_92fQa9Yha115Gq9tC-Rw4rM3t4avWYCJAM_5_NT3arXkY8dQJuhvYrpZYY1naGdEjm9ILlKxMaBjppDmaE1d5Qn9StnBYm_68NnlW1eT8pUorg?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Download 4k, Roronoa Zoro, green moon, kimono, One Piece, night, green fire flames, artwork, One Piece characters, manga, Pirate Hunter, Roronoa Zoro One Piece wallpapers for desktop free. Pictures for desktop free</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://wallpapers4screen.com/anime/4k-roronoa-zoro-green-moon-kimono-one-piece-96045?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">wallpapers4screen.com</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The moon hung above a forgotten island somewhere in the New World.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A cold wind swept through an abandoned samurai village. Broken swords covered the ground, and ancient monuments stood silently beneath the stars.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro walked through the ruins, carrying his three swords.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Suddenly, he noticed something carved into an enormous stone monument.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">It was an ancient message:</p>
-<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Chapter 01 – The Blade That Never Breaks</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/y_VlKIY0t4LZQdRQ--jvElohQz-HpBEcVraFsCscfOPqSYVbYa0y31m-YGYK_92fQa9Yha115Gq9tC-Rw4rM3t4avWYCJAM_5_NT3arXkY8dQJuhvYrpZYY1naGdEjm9ILlKxMaBjppDmaE1d5Qn9StnBYm_68NnlW1eT8pUorg?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">Download 4k, Roronoa Zoro, green moon, kimono, One Piece, night, green fire flames, artwork, One Piece characters, manga, Pirate Hunter, Roronoa Zoro One Piece wallpapers for desktop free. Pictures for desktop free</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://wallpapers4screen.com/anime/4k-roronoa-zoro-green-moon-kimono-one-piece-96045?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">wallpapers4screen.com</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The moon hung above a forgotten island somewhere in the New World.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A cold wind swept through an abandoned samurai village. Broken swords covered the ground, and ancient monuments stood silently beneath the stars.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro walked through the ruins, carrying his three swords.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Suddenly, he noticed something carved into an enormous stone monument.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">It was an ancient message:</p>
+<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg ">
           <p class="leading-relaxed">&quot;When the black blade awakens, the strongest swordsman shall stand before the throne of legends.&quot;</p>
         </blockquote>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro placed his hand on Wado Ichimonji.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious voice emerged from the darkness.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;You carry three swords, yet you still haven&#039;t discovered the true meaning of swordsmanship.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A mysterious old swordsman stepped into the moonlight.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">His body was covered in scars, and a black blade rested against his shoulder.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro smiled.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Then show me.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The old warrior raised his sword.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">The atmosphere changed.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A powerful wave of Haki spread across the island.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro slowly drew his three blades.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;I&#039;ve got a promise to keep. I don&#039;t have time to lose.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">And so, another legendary battle was about to begin.</p>
-<h2 id="heading-83-4-zoro-s-swordsmanship-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro placed his hand on Wado Ichimonji.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A mysterious voice emerged from the darkness.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;You carry three swords, yet you still haven&#039;t discovered the true meaning of swordsmanship.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A mysterious old swordsman stepped into the moonlight.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">His body was covered in scars, and a black blade rested against his shoulder.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro smiled.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;Then show me.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The old warrior raised his sword.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The atmosphere changed.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A powerful wave of Haki spread across the island.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro slowly drew his three blades.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;I&#039;ve got a promise to keep. I don&#039;t have time to lose.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">And so, another legendary battle was about to begin.</p>
+<h2 id="heading-83-4-zoro-s-swordsmanship-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>⚔️ 4. Zoro&#039;s Swordsmanship Power System</span>
           <a href="#heading-83-4-zoro-s-swordsmanship-power-system" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Every swordsman has a different path to becoming stronger. True mastery requires physical training, mental discipline, Haki control, and an understanding of the blade.</p>
-<h3 id="heading-85-five-levels-of-swordsmanship" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Every swordsman has a different path to becoming stronger. True mastery requires physical training, mental discipline, Haki control, and an understanding of the blade.</p>
+<h3 id="heading-85-five-levels-of-swordsmanship" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>Five Levels of Swordsmanship</span>
           <a href="#heading-85-five-levels-of-swordsmanship" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/i6zSotEt5YrdWFfOw66vuhEwpcJ2OpFgRozmJqVnDXIuHTW1kbYOUw74ByIIrgfMDCrPWGjJyhgah3CLTiiLAeeixobY5PVWnfd6IvgdaU3qb5XSBADIBsGRPS3FdrE3L7xleDUK7m_SjRYSNd7CsQYne7MpyE_DdlS3BKx31W8?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece — история о величайшей манге и потрясающем аниме всех времён и народов! | StopGame</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">1. 🌱 Apprentice Swordsman</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Learn basic sword movements, balance, discipline, and sword control.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/kCkZI5CdwPbkmE3w8sNkraX-YS5DUefYSJ5BUA4OyvJf2WDAWKEm2jw9iH4CzjkqZElXklBkJDkrxkUlrCS3Gogyne5hEnrlwy9wHJi-_Y3vn_cufSB-KCJkLIxxXDWioMphe7tj9VE1fEbnKc2GmSXduZuPGdGosFTvqs9df1Q?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ワンピース - イーストブルー編 - 7話 (アニメ) | 無料動画・見逃し配信を見るなら | ABEMA</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">2. ⚔️ Skilled Warrior</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Develop unique sword techniques, speed, and battle instincts.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/lmBCfgmhVppxEoYi2SZ3u-mohK7xa_lPbdS5ZRhh4kdDtEiDzG11fJYn7yFrYhfaCUIlYLJe8KExFDfS7BFL--31j8kxhV-uaHsO_jcSCqSEyCWaCJMzK7dIe3SQg7Bk3y4I5ss9brzokNmTbwgAWsIHZB2mVgTITAW5A6TdwLM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: Enies Lobby Arc | Summary, Recap, &amp; Review — Poggers</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">3. 🔥 Elite Swordsman</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Unlock advanced techniques and begin mastering Haki.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/5Kv9AYB3isSNt8oaFfCbv4MJKU8hWnokjxfiROjG0E7tGhjmC3LyqvSwbqYUTJAMkH8IaHrTZ9dWNTzvy4qPU5pPOUZAaFhV2ppYTGUP4nnRZc2roSw-tCQ5ilhdCWB5F6WhAw2_t2zTGTGJoo-GZXrY0jlMGBBxfQun1afqLV4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">When Does Zoro Get Enma In &#039;One Piece&#039;?</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">4. 👑 Legendary Swordsman</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Master advanced Haki, powerful blades, and extraordinary combat abilities.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]"><a href="https://images.openai.com/static-rsc-4/hh78xYEPO5UX0MfRTKOuVaCwB2aoiuhbh-fvjf6z5nkX08Z1zv7BjdM0_rdnbSUnQhkU6yXeaujZlKk91_IFheRT9u9uUKjPimdH0T3A24PJevydlGa4Ub3Njj3mrdFAC0sBplH5AMibWWafYnWnq5q8xo7HmLGUmWv3W_rl-j4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">The Three-Sword Style of the Supreme King! Zoro vs. King (2023)</a></p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">5. 🌌 World&#039;s Greatest Swordsman</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Reach the pinnacle of swordsmanship and create a legacy that lasts forever.</p>
-<h3 id="heading-101-zoro-s-core-attributes" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/i6zSotEt5YrdWFfOw66vuhEwpcJ2OpFgRozmJqVnDXIuHTW1kbYOUw74ByIIrgfMDCrPWGjJyhgah3CLTiiLAeeixobY5PVWnfd6IvgdaU3qb5XSBADIBsGRPS3FdrE3L7xleDUK7m_SjRYSNd7CsQYne7MpyE_DdlS3BKx31W8?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece — история о величайшей манге и потрясающем аниме всех времён и народов! | StopGame</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">1. 🌱 Apprentice Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Learn basic sword movements, balance, discipline, and sword control.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/kCkZI5CdwPbkmE3w8sNkraX-YS5DUefYSJ5BUA4OyvJf2WDAWKEm2jw9iH4CzjkqZElXklBkJDkrxkUlrCS3Gogyne5hEnrlwy9wHJi-_Y3vn_cufSB-KCJkLIxxXDWioMphe7tj9VE1fEbnKc2GmSXduZuPGdGosFTvqs9df1Q?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">ワンピース - イーストブルー編 - 7話 (アニメ) | 無料動画・見逃し配信を見るなら | ABEMA</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">2. ⚔️ Skilled Warrior</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Develop unique sword techniques, speed, and battle instincts.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/lmBCfgmhVppxEoYi2SZ3u-mohK7xa_lPbdS5ZRhh4kdDtEiDzG11fJYn7yFrYhfaCUIlYLJe8KExFDfS7BFL--31j8kxhV-uaHsO_jcSCqSEyCWaCJMzK7dIe3SQg7Bk3y4I5ss9brzokNmTbwgAWsIHZB2mVgTITAW5A6TdwLM?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">One Piece: Enies Lobby Arc | Summary, Recap, &amp; Review — Poggers</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">3. 🔥 Elite Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Unlock advanced techniques and begin mastering Haki.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/5Kv9AYB3isSNt8oaFfCbv4MJKU8hWnokjxfiROjG0E7tGhjmC3LyqvSwbqYUTJAMkH8IaHrTZ9dWNTzvy4qPU5pPOUZAaFhV2ppYTGUP4nnRZc2roSw-tCQ5ilhdCWB5F6WhAw2_t2zTGTGJoo-GZXrY0jlMGBBxfQun1afqLV4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">When Does Zoro Get Enma In &#039;One Piece&#039;?</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">4. 👑 Legendary Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Master advanced Haki, powerful blades, and extraordinary combat abilities.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><a href="https://images.openai.com/static-rsc-4/hh78xYEPO5UX0MfRTKOuVaCwB2aoiuhbh-fvjf6z5nkX08Z1zv7BjdM0_rdnbSUnQhkU6yXeaujZlKk91_IFheRT9u9uUKjPimdH0T3A24PJevydlGa4Ub3Njj3mrdFAC0sBplH5AMibWWafYnWnq5q8xo7HmLGUmWv3W_rl-j4?purpose=inline" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:underline decoration-indigo-400/40">The Three-Sword Style of the Supreme King! Zoro vs. King (2023)</a></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">5. 🌌 World&#039;s Greatest Swordsman</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Reach the pinnacle of swordsmanship and create a legacy that lasts forever.</p>
+<h3 id="heading-101-zoro-s-core-attributes" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🧬 Zoro&#039;s Core Attributes</span>
           <a href="#heading-101-zoro-s-core-attributes" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<h2 id="heading-103-5-the-zoro-training-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<div class="my-6 overflow-x-auto rounded-xl border border-[var(--border-color)] shadow-xs">
+            <table class="min-w-full divide-y divide-[var(--border-color)] text-left text-sm text-[var(--text-main)]">
+              <tbody class="divide-y divide-[var(--border-color)] bg-[var(--bg-card)]">
+                <tr>
+                    <th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th><th class="px-4 py-2.5 font-semibold bg-[var(--bg-muted)] border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</th>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr><tr>
+                    <td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td><td class="px-4 py-2.5 border-r last:border-r-0 border-[var(--border-subtle)]">&nbsp;</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+<h2 id="heading-103-5-the-zoro-training-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🏋️ 5. The Zoro Training Philosophy</span>
           <a href="#heading-103-5-the-zoro-training-philosophy" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro doesn&#039;t become stronger by waiting for opportunities. He trains, fights, loses, and comes back stronger.</p>
-<h3 id="heading-105-his-daily-training-mindset" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro doesn&#039;t become stronger by waiting for opportunities. He trains, fights, loses, and comes back stronger.</p>
+<h3 id="heading-105-his-daily-training-mindset" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>His Daily Training Mindset</span>
           <a href="#heading-105-his-daily-training-mindset" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>💪 Strength training to build extraordinary physical power.</li>
-<li>⚔️ Swordsmanship practice to improve precision and technique.</li>
-<li>🏃 Endurance training to survive exhausting battles.</li>
-<li>🧘 Mental discipline to maintain focus.</li>
-<li>🔥 Continuous challenges to push beyond his limits.</li>
-<li>👑 Never abandon your promises or dreams.</li>
+<li class="">💪 Strength training to build extraordinary physical power.</li>
+<li class="">⚔️ Swordsmanship practice to improve precision and technique.</li>
+<li class="">🏃 Endurance training to survive exhausting battles.</li>
+<li class="">🧘 Mental discipline to maintain focus.</li>
+<li class="">🔥 Continuous challenges to push beyond his limits.</li>
+<li class="">👑 Never abandon your promises or dreams.</li>
 </ul>
-<h3 id="heading-112-the-five-rules-of-zoro" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h3 id="heading-112-the-five-rules-of-zoro" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>The Five Rules of Zoro</span>
           <a href="#heading-112-the-five-rules-of-zoro" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
 <ol class="list-decimal pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Never give up on your dream.</li>
-<li>Never betray the people who trust you.</li>
-<li>Accept defeat, learn, and become stronger.</li>
-<li>Train even when nobody is watching.</li>
-<li>Let your actions speak louder than your words.</li>
+<li class="">Never give up on your dream.</li>
+<li class="">Never betray the people who trust you.</li>
+<li class="">Accept defeat, learn, and become stronger.</li>
+<li class="">Train even when nobody is watching.</li>
+<li class="">Let your actions speak louder than your words.</li>
 </ol>
-<h2 id="heading-118-6-my-zoro-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-118-6-my-zoro-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🎯 6. My Zoro World-Building Checklist</span>
           <a href="#heading-118-6-my-zoro-world-building-checklist" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
 <ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
-<li>Design the legendary swordsmanship world map.</li>
-<li>Create seven unique sword kingdoms.</li>
-<li>Build a history of legendary swords.</li>
-<li>Develop the strongest swordsmen in each region.</li>
-<li>Design different sword-fighting styles.</li>
-<li>Create ancient Haki techniques.</li>
-<li>Develop a mysterious swordsmith civilization.</li>
-<li>Write the story of Zoro&#039;s greatest rival.</li>
-<li>Introduce a legendary black blade.</li>
-<li>Create the ultimate swordsmanship tournament.</li>
-<li>Write the final battle for the World&#039;s Greatest Swordsman title.</li>
+<li class="">Design the legendary swordsmanship world map.</li>
+<li class="">Create seven unique sword kingdoms.</li>
+<li class="">Build a history of legendary swords.</li>
+<li class="">Develop the strongest swordsmen in each region.</li>
+<li class="">Design different sword-fighting styles.</li>
+<li class="">Create ancient Haki techniques.</li>
+<li class="">Develop a mysterious swordsmith civilization.</li>
+<li class="">Write the story of Zoro&#039;s greatest rival.</li>
+<li class="">Introduce a legendary black blade.</li>
+<li class="">Create the ultimate swordsmanship tournament.</li>
+<li class="">Write the final battle for the World&#039;s Greatest Swordsman title.</li>
 </ul>
-<h2 id="heading-130-7-legendary-quotes-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<h2 id="heading-130-7-legendary-quotes-philosophy" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>✨ 7. Legendary Quotes &amp; Philosophy</span>
           <a href="#heading-130-7-legendary-quotes-philosophy" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ About Dreams</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;Nothing happened.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Zoro&#039;s legendary demonstration of loyalty and sacrifice.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">🔥 About Determination</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">&quot;I will never lose again.&quot;</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A promise that defines his journey.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">👑 About Loyalty</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">A true swordsman stands beside his captain, even when the world stands against them.</p>
-<h2 id="heading-139-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2">
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">⚔️ About Dreams</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;Nothing happened.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Zoro&#039;s legendary demonstration of loyalty and sacrifice.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🔥 About Determination</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">&quot;I will never lose again.&quot;</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A promise that defines his journey.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">👑 About Loyalty</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A true swordsman stands beside his captain, even when the world stands against them.</p>
+<h2 id="heading-139-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
           <span>🌊 Final Thoughts</span>
           <a href="#heading-139-final-thoughts" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h2>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Roronoa Zoro represents something greater than swordsmanship.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He represents the power of an unbreakable promise, the discipline to keep improving, and the courage to face impossible challenges.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">He doesn&#039;t need to be the hero of every story. He simply needs to become strong enough to protect the people and dreams that matter to him.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">Three swords. One promise. One ultimate dream.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)]">⚔️ Train harder. Stand stronger. Never lose your way. Become the World&#039;s Greatest Swordsman.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Roronoa Zoro represents something greater than swordsmanship.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He represents the power of an unbreakable promise, the discipline to keep improving, and the courage to face impossible challenges.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">He doesn&#039;t need to be the hero of every story. He simply needs to become strong enough to protect the people and dreams that matter to him.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Three swords. One promise. One ultimate dream.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">⚔️ Train harder. Stand stronger. Never lose your way. Become the World&#039;s Greatest Swordsman.</p>
 
       </article>
 
