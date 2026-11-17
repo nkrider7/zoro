@@ -247,7 +247,7 @@
 
         <div class="flex items-center gap-1.5 min-w-0 truncate">
           <div class="h-4 w-4 shrink-0 flex items-center justify-center text-xs">
-            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376614/onepiece-3.webp" class="h-3.5 w-3.5 rounded-xs object-cover" />
+            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376614/onepiece-3.webp" alt="" class="h-4 w-4 rounded-xs object-cover shrink-0" />
           </div>
           <span class="text-xs font-semibold text-[var(--text-main)] truncate">Sanji</span>
         </div>
@@ -396,22 +396,27 @@
       </div>
     
 
-    <!-- Note Cover Image Banner -->
+    <!-- Note Cover Banner -->
     
-      <div class="w-full h-44 sm:h-64 overflow-hidden relative select-none">
-        <img src="https://i.pinimg.com/originals/54/e0/0d/54e00d34f2eefd58798d055090ce49e4.gif" alt="" class="w-full h-full object-cover" />
+      <div class="relative mb-0 w-full select-none">
+        <div class="relative w-full overflow-hidden bg-[var(--bg-muted)] transition-[height] duration-150 ease-out" style="height: 180px;">
+          <div class="absolute inset-0 overflow-hidden" style="contain: paint;">
+            <img src="https://i.pinimg.com/originals/54/e0/0d/54e00d34f2eefd58798d055090ce49e4.gif" alt="" class="absolute inset-0 h-full w-full object-cover select-none" style="object-position: 50% 50%; transform: scale(1); transform-origin: 50% 50%;" />
+          </div>
+          
+        </div>
       </div>
     
 
     <!-- Document Content Container with dynamic width class -->
-    <main id="main-document-container" class="max-w-4xl w-full mx-auto px-4 sm:px-12 py-6 sm:py-8 flex-1 transition-[max-width] duration-200 ease-out">
+    <main id="main-document-container" class="max-w-4xl w-full mx-auto px-4 sm:px-12 pt-0 pb-6 sm:pb-8 flex-1 transition-[max-width] duration-200 ease-out">
       
-      <!-- Floating Icon Overlapping Banner -->
-      <div class="-mt-12 sm:-mt-16 mb-4 relative z-10">
-        <div class="h-14 w-14 sm:h-20 sm:w-20 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-xl flex items-center justify-center text-2xl sm:text-4xl overflow-hidden select-none">
-          <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376614/onepiece-3.webp" class="w-full h-full object-cover" />
+      <!-- Page Icon Overlapping Banner -->
+      
+        <div class="relative z-10 w-fit -mt-10 mb-2 select-none">
+          <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376614/onepiece-3.webp" alt="" class="h-[78px] w-[78px] sm:h-[88px] sm:w-[88px] rounded-xl object-cover ring-2 ring-[var(--bg-main)] shadow-xs select-none" />
         </div>
-      </div>
+      
 
       <!-- Title & Metadata -->
       <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-main)] mb-3">
