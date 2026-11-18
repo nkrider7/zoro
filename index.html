@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoravar</title>
-  <meta name="description" content="Zoravar - Published with SoulSpace">
-  <meta property="og:title" content="Zoravar">
+  <title>Boa Hancock</title>
+  <meta name="description" content="Boa Hancock - Published with SoulSpace">
+  <meta property="og:title" content="Boa Hancock">
   <meta property="og:type" content="article">
   <meta name="generator" content="SoulSpace GitHub Pages Engine">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -349,13 +349,15 @@
   <!-- Main Canvas Area -->
   <div class="flex-1 flex flex-col min-w-0 min-h-screen overflow-y-auto w-full">
     
-    <!-- Top Sticky Header Bar (Exact Image 1 Public Page Match) -->
-    <header class="sticky top-0 z-20 border-b border-[var(--border-color)] bg-[var(--bg-main)]/85 backdrop-blur-md px-3 sm:px-6 h-12 flex items-center justify-between gap-2 select-none">
-      <div class="flex items-center gap-2 min-w-0 flex-1">
+    <!-- Top Sticky Header Bar (Minimal 3-Column Layout with Centered Page Title) -->
+    <header class="sticky top-0 z-20 border-b border-[var(--border-color)] bg-[var(--bg-main)]/85 backdrop-blur-md px-3 sm:px-5 h-12 grid grid-cols-[1fr_auto_1fr] items-center gap-2 select-none">
+      <!-- Left: Sidebar Toggle or Brand Logo -->
+      <div class="flex items-center gap-2 min-w-0 justify-self-start">
         
-          <div class="flex items-center gap-2">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center">
-              <svg class="h-8 w-8" viewBox="0 0 512 512" fill="none" role="img" aria-label="SoulSpace Logo">
+          <a href="https://www.soularise.space/" class="flex items-center gap-2 min-w-0 no-underline group" title="Soul Space">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg group-hover:bg-[var(--bg-accent)] transition-colors">
+              <span class="pointer-events-none flex items-center justify-center">
+                <svg class="h-8 w-8" viewBox="0 0 512 512" fill="none" role="img" aria-label="SoulSpace Logo">
   <defs>
     <linearGradient id="ghost-ring" x1="-201" y1="0" x2="201" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#2563EB" />
@@ -381,36 +383,35 @@
     <path fill="#FFFFFF" d="M 373.2 112.5 C 375.2 132.8, 381.4 139.0, 401.7 143.9 C 381.4 148.8, 375.2 155.0, 373.2 175.3 C 371.2 155.0, 365.0 148.8, 344.7 143.9 C 365.0 139.0, 371.2 132.8, 373.2 112.5 Z" />
   </g>
 </svg>
-            </div>
+              </span>
+            </span>
             
-          </div>
+          </a>
         
-
-        
-
-        <div class="flex items-center gap-1.5 min-w-0 truncate">
-          <div class="h-4 w-4 shrink-0 flex items-center justify-center text-xs">
-            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376646/onepiece-49.webp" alt="" class="h-4 w-4 rounded-xs object-cover shrink-0" />
-          </div>
-          <span class="text-xs font-semibold text-[var(--text-main)] truncate">Zoravar</span>
-        </div>
-
-        <span class="rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 px-1.5 py-0.5 text-[10px] font-medium tracking-wide shrink-0 hidden sm:inline">
-          Pages
-        </span>
       </div>
 
-      <div class="flex items-center gap-1.5 shrink-0">
-        <!-- Page Width Toggle Button (Standard / Wide / Full) -->
-        <button id="page-width-btn" onclick="cyclePageWidth()" class="h-8 w-8 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-[var(--bg-accent)] text-xs font-medium flex items-center justify-center transition-colors cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)]" title="Page width (Standard / Wide / Full)">
+      <!-- Center: Page Icon & Title -->
+      <div id="navbar-page-title" class="flex items-center justify-center gap-1.5 min-w-0 max-w-[56vw] sm:max-w-[44vw] justify-self-center">
+        
+        <div class="flex items-center gap-1.5 min-w-0">
+          <div class="h-4 w-4 shrink-0 flex items-center justify-center text-xs">
+            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376623/onepiece-17.webp" alt="" class="h-4 w-4 rounded-xs object-cover shrink-0" />
+          </div>
+          <span class="text-xs sm:text-[13px] font-semibold tracking-tight text-[var(--text-main)] truncate">Boa Hancock</span>
+        </div>
+      </div>
+
+      <!-- Right: Minimal Page Width & Theme Controls -->
+      <div class="flex items-center gap-1 shrink-0 justify-self-end">
+        <button id="page-width-btn" onclick="cyclePageWidth()" class="h-8 w-8 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] flex items-center justify-center transition-colors cursor-pointer" title="Page width (Standard / Wide / Full)">
           <span id="page-width-icon">
-            <i data-lucide="fold-horizontal" class="h-3.5 w-3.5"></i>
+            <i data-lucide="fold-horizontal" class="h-4 w-4"></i>
           </span>
         </button>
 
-        <button onclick="toggleTheme()" class="h-8 w-8 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-[var(--bg-accent)] text-xs font-medium flex items-center justify-center transition-colors cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)]" title="Toggle theme">
+        <button onclick="toggleTheme()" class="h-8 w-8 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] flex items-center justify-center transition-colors cursor-pointer" title="Toggle theme">
           <span class="theme-icon-container">
-            <i data-lucide="moon" class="h-3.5 w-3.5"></i>
+            <i data-lucide="moon" class="h-4 w-4"></i>
           </span>
         </button>
       </div>
@@ -421,7 +422,7 @@
       <div id="floating-toc-root" class="fixed right-3 sm:right-6 top-24 z-30 flex flex-row-reverse items-start select-none group pointer-events-auto">
         <!-- 1. Sleek Vertical Dashes Indicator (Right edge) -->
         <div id="floating-toc-dashes" class="flex flex-col items-end gap-1.5 py-2 px-1.5 cursor-pointer rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors" title="Table of contents" onclick="toggleFloatingToc()">
-          <div data-toc-dash="heading-0-the-world-of-one-piece" onclick="event.stopPropagation(); scrollToHeading('heading-0-the-world-of-one-piece')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-4 h-[3px] bg-black dark:bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)] scale-x-110 opacity-100"></div><div data-toc-dash="heading-9-example-print-numbers-from-1-to-5" onclick="event.stopPropagation(); scrollToHeading('heading-9-example-print-numbers-from-1-to-5')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-11-how-the-for-loop-works" onclick="event.stopPropagation(); scrollToHeading('heading-11-how-the-for-loop-works')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div>
+          <div data-toc-dash="heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king" onclick="event.stopPropagation(); scrollToHeading('heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-4 h-[3px] bg-black dark:bg-white shadow-[0_0_8px_rgba(255,255,255,0.7)] scale-x-110 opacity-100"></div><div data-toc-dash="heading-3-1-building-a-world-of-adventure" onclick="event.stopPropagation(); scrollToHeading('heading-3-1-building-a-world-of-adventure')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-5-the-seven-great-regions" onclick="event.stopPropagation(); scrollToHeading('heading-5-the-seven-great-regions')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-15-legendary-character-boa-hancock" onclick="event.stopPropagation(); scrollToHeading('heading-15-legendary-character-boa-hancock')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-18-character-profile" onclick="event.stopPropagation(); scrollToHeading('heading-18-character-profile')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-19-her-legendary-powers" onclick="event.stopPropagation(); scrollToHeading('heading-19-her-legendary-powers')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-30-why-she-is-so-powerful" onclick="event.stopPropagation(); scrollToHeading('heading-30-why-she-is-so-powerful')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-37-3-an-original-story-the-forgotten-empress" onclick="event.stopPropagation(); scrollToHeading('heading-37-3-an-original-story-the-forgotten-empress')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-51-4-character-power-system" onclick="event.stopPropagation(); scrollToHeading('heading-51-4-character-power-system')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-54-character-progression" onclick="event.stopPropagation(); scrollToHeading('heading-54-character-progression')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-2 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-61-5-my-world-building-checklist" onclick="event.stopPropagation(); scrollToHeading('heading-61-5-my-world-building-checklist')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div><div data-toc-dash="heading-72-final-thoughts" onclick="event.stopPropagation(); scrollToHeading('heading-72-final-thoughts')" class="toc-dash rounded-full transition-all duration-200 cursor-pointer w-3 h-[2.5px] bg-neutral-400/40 dark:bg-neutral-600 opacity-70 hover:opacity-100"></div>
         </div>
 
         <!-- 2. Notion-style Expanded Outline Card -->
@@ -434,19 +435,64 @@
           </div>
           <div id="floating-toc-list" class="flex-1 overflow-y-auto space-y-0.5 py-0.5 max-h-[50vh] pr-1">
             
-              <button data-toc-id="heading-0-the-world-of-one-piece" onclick="scrollToHeading('heading-0-the-world-of-one-piece')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 font-medium text-[var(--text-main)]">
+              <button data-toc-id="heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king" onclick="scrollToHeading('heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 font-medium text-[var(--text-main)]">
                 <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
-                <span class="truncate">⚔️ The World of One Piece</span>
+                <span class="truncate">🌊 The World of One Piece: A Journey to Become the Pirate King</span>
               </button>
             
-              <button data-toc-id="heading-9-example-print-numbers-from-1-to-5" onclick="scrollToHeading('heading-9-example-print-numbers-from-1-to-5')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+              <button data-toc-id="heading-3-1-building-a-world-of-adventure" onclick="scrollToHeading('heading-3-1-building-a-world-of-adventure')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
                 <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
-                <span class="truncate">Example: Print numbers from 1 to 5</span>
+                <span class="truncate">🏴‍☠️ 1. Building a World of Adventure</span>
               </button>
             
-              <button data-toc-id="heading-11-how-the-for-loop-works" onclick="scrollToHeading('heading-11-how-the-for-loop-works')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+              <button data-toc-id="heading-5-the-seven-great-regions" onclick="scrollToHeading('heading-5-the-seven-great-regions')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
                 <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
-                <span class="truncate">How the  for  loop works</span>
+                <span class="truncate">🌍 The Seven Great Regions</span>
+              </button>
+            
+              <button data-toc-id="heading-15-legendary-character-boa-hancock" onclick="scrollToHeading('heading-15-legendary-character-boa-hancock')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">👑  Legendary Character: Boa Hancock</span>
+              </button>
+            
+              <button data-toc-id="heading-18-character-profile" onclick="scrollToHeading('heading-18-character-profile')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">💜 Character Profile</span>
+              </button>
+            
+              <button data-toc-id="heading-19-her-legendary-powers" onclick="scrollToHeading('heading-19-her-legendary-powers')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">💎 Her Legendary Powers</span>
+              </button>
+            
+              <button data-toc-id="heading-30-why-she-is-so-powerful" onclick="scrollToHeading('heading-30-why-she-is-so-powerful')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🌹 Why She Is So Powerful</span>
+              </button>
+            
+              <button data-toc-id="heading-37-3-an-original-story-the-forgotten-empress" onclick="scrollToHeading('heading-37-3-an-original-story-the-forgotten-empress')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">📖 3. An Original Story: The Forgotten Empress</span>
+              </button>
+            
+              <button data-toc-id="heading-51-4-character-power-system" onclick="scrollToHeading('heading-51-4-character-power-system')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">⚔️ 4. Character Power System</span>
+              </button>
+            
+              <button data-toc-id="heading-54-character-progression" onclick="scrollToHeading('heading-54-character-progression')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-6 text-[11px]">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">Character Progression</span>
+              </button>
+            
+              <button data-toc-id="heading-61-5-my-world-building-checklist" onclick="scrollToHeading('heading-61-5-my-world-building-checklist')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">🎯 5. My World-Building Checklist</span>
+              </button>
+            
+              <button data-toc-id="heading-72-final-thoughts" onclick="scrollToHeading('heading-72-final-thoughts')" class="w-full text-left rounded-md px-2 py-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-accent)] transition-all cursor-pointer truncate flex items-center gap-1.5 pl-4">
+                <span class="h-1.5 w-1.5 rounded-full shrink-0 bg-neutral-400/40 transition-all toc-bullet"></span>
+                <span class="truncate">✨ Final Thoughts</span>
               </button>
             
           </div>
@@ -457,9 +503,9 @@
     <!-- Note Cover Banner -->
     
       <div class="relative mb-0 w-full select-none">
-        <div class="relative w-full overflow-hidden bg-[var(--bg-muted)] transition-[height] duration-150 ease-out" style="height: 520px;">
+        <div class="relative w-full overflow-hidden bg-[var(--bg-muted)] transition-[height] duration-150 ease-out" style="height: 166px;">
           <div class="absolute inset-0 overflow-hidden" style="contain: paint;">
-            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1792312505/Lush_Coastal_Greenhouse_Porch_Retreat.webp" alt="" class="absolute inset-0 h-full w-full object-cover select-none" style="object-position: 50% 50%; transform: scale(1); transform-origin: 50% 50%;" />
+            <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1792312514/Springtime_Sakura_Station_Adventure.webp" alt="" class="absolute inset-0 h-full w-full object-cover select-none" style="object-position: 50% 50%; transform: scale(1); transform-origin: 50% 50%;" />
           </div>
           
         </div>
@@ -472,13 +518,13 @@
       <!-- Page Icon Overlapping Banner -->
       
         <div class="relative z-10 w-fit -mt-10 mb-2 select-none">
-          <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376646/onepiece-49.webp" alt="" class="h-[78px] w-[78px] sm:h-[88px] sm:w-[88px] rounded-xl object-cover select-none" />
+          <img src="https://res.cloudinary.com/heaa0mxa/image/upload/v1793376623/onepiece-17.webp" alt="" class="h-[78px] w-[78px] sm:h-[88px] sm:w-[88px] rounded-xl object-cover select-none" />
         </div>
       
 
       <!-- Title & Metadata -->
       <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-main)] mb-3">
-        Zoravar
+        Boa Hancock
       </h1>
       
       
@@ -487,102 +533,199 @@
 
       <!-- Article Body -->
       <article class="space-y-2 text-[var(--text-main)] text-sm sm:text-base leading-relaxed">
-        <h1 id="heading-0-the-world-of-one-piece" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
-          <span>⚔️ The World of One Piece</span>
-          <a href="#heading-0-the-world-of-one-piece" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+        <h1 id="heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king" class="text-2xl sm:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>🌊 The World of One Piece: A Journey to Become the Pirate King</span>
+          <a href="#heading-0-the-world-of-one-piece-a-journey-to-become-the-pirate-king" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h1>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">The Journey of Roronoa Zoro, The World&#039;s Greatest Swordsman</p>
-<p class="leading-relaxed  text-[var(--text-main)] bn-bg-red bn-block-bg rounded-lg px-4 py-2.5 my-2.5">Welcome to a world where swords decide destinies, warriors are born through endless battles, and an unbreakable promise drives one swordsman toward the greatest title in the world.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">A  Youtube botton here world where strength is earned through discipline, loyalty is stronger than fear, and every scar tells a story.</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">⚔️ 1. The Legend of the Three-Sword Style</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">Imagine a world where legendary swordsmen travel across dangerous oceans, searching for powerful blades, challenging mighty warriors, and protecting the dreams of those they believe in.</p>
-<h3 id="heading-6-" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
-          <span></span>
-          <a href="#heading-6-" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg ">
+          <p class="leading-relaxed">&quot;The world is full of possibilities. All you need is the courage to explore them.&quot; ✨</p>
+        </blockquote>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Welcome to a world where dreams have no limits, oceans hide countless mysteries, and powerful warriors shape the destiny of entire kingdoms.</p>
+<h2 id="heading-3-1-building-a-world-of-adventure" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>🏴‍☠️ 1. Building a World of Adventure</span>
+          <a href="#heading-3-1-building-a-world-of-adventure" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Imagine creating your own anime-inspired universe, filled with mysterious islands, legendary kingdoms, dangerous oceans, and unforgettable characters.</p>
+<h3 id="heading-5-the-seven-great-regions" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>🌍 The Seven Great Regions</span>
+          <a href="#heading-5-the-seven-great-regions" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">Absolutely! 😊 What are you trying to write—a letter, email, personal message, essay, story, post, or something else?</p>
-<p class="leading-relaxed my-3 text-[var(--text-main)] ">Tell me what you want to say, even if it’s messy, incomplete, or just a few thoughts. We’ll work from there and make it flow naturally while keeping it in your voice.</p>
-<h3 id="heading-9-example-print-numbers-from-1-to-5" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
-          <span><strong>Example: Print numbers from 1 to 5</strong></span>
-          <a href="#heading-9-example-print-numbers-from-1-to-5" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li class="">🌋 <strong>Ember Island</strong> – A volcanic kingdom protected by ancient warriors.</li>
+<li class="">❄️ <strong>Frost Kingdom</strong> – A frozen civilization hiding forgotten secrets.</li>
+<li class="">🌸 <strong>Sakura Valley</strong> – A peaceful land of cherry blossoms and samurai.</li>
+<li class="">🌊 <strong>Grand Blue Ocean</strong> – An endless ocean filled with dangerous creatures.</li>
+<li class="">🌑 <strong>Shadow Realm</strong> – A mysterious world ruled by darkness.</li>
+<li class="">☁️ <strong>Sky Kingdom</strong> – A civilization floating above the clouds.</li>
+<li class="">💎 <strong>Crystal Empire</strong> – A wealthy kingdom powered by magical energy.</li>
+</ul>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Every region has its own culture, history, powers, and legendary heroes.</p>
+<hr class="my-6 border-[var(--border-color)]" />
+<h2 id="heading-15-legendary-character-boa-hancock" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>👑  Legendary Character: Boa Hancock</span>
+          <a href="#heading-15-legendary-character-boa-hancock" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><em>Beauty, confidence, elegance, and overwhelming power.</em></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>Boa Hancock</strong> is one of the most fascinating characters in the One Piece universe.</p>
+<h3 id="heading-18-character-profile" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>💜 Character Profile</span>
+          <a href="#heading-18-character-profile" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
-<div class="soul-code-block group">
-          <div class="soul-code-header">
-            <span class="soul-code-lang">Markdown</span>
-            <button type="button" onclick="copyCode(this)" class="soul-code-copy-btn" aria-label="Copy code" title="Copy code">
-              <svg class="soul-code-copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-              <span>Copy</span>
-            </button>
+<h3 id="heading-19-her-legendary-powers" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>💎 Her Legendary Powers</span>
+          <a href="#heading-19-her-legendary-powers" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>1. Mero Mero no Mi</strong></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Her Devil Fruit allows her to turn targets into stone through the power of attraction.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>2. Perfume Femur</strong></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A powerful kick that can petrify whatever it touches.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>3. Slave Arrow</strong></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">She creates a heart-shaped projectile that can petrify opponents.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>4. Haki Mastery</strong></p>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li class="">⚡ Conqueror&#039;s Haki</li>
+<li class="">🛡️ Armament Haki</li>
+<li class="">👁️ Observation Haki</li>
+</ul>
+<h3 id="heading-30-why-she-is-so-powerful" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>🌹 Why She Is So Powerful</span>
+          <a href="#heading-30-why-she-is-so-powerful" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h3>
+<ul class="list-disc pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li class="">Exceptional combat abilities.</li>
+<li class="">Incredible speed and agility.</li>
+<li class="">Mastery of multiple Haki types.</li>
+<li class="">A powerful Devil Fruit.</li>
+<li class="">Strong leadership and confidence.</li>
+</ul>
+<hr class="my-6 border-[var(--border-color)]" />
+<h2 id="heading-37-3-an-original-story-the-forgotten-empress" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>📖 3. An Original Story: The Forgotten Empress</span>
+          <a href="#heading-37-3-an-original-story-the-forgotten-empress" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><em>Chapter 01 – The Island Beyond the Horizon</em></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">The moon illuminated the endless ocean. Somewhere beyond the Grand Blue, an island appeared that was missing from every map.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A mysterious energy surrounded its mountains.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">At the center of the island stood an ancient palace.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A young explorer named Akira discovered a forgotten stone tablet containing a message:</p>
+<blockquote class="border-l-4 border-indigo-500/60 pl-4 py-1.5 my-4 italic text-[var(--text-muted)] bg-indigo-500/5 rounded-r-lg ">
+          <p class="leading-relaxed">&quot;When the seven seas become one, the forgotten power shall awaken.&quot;</p>
+        </blockquote>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">But Akira wasn&#039;t alone.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A powerful warrior watched him from the shadows.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🌸 It was Boa Hancock.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>&quot;You dare enter this sacred land without permission?&quot;</strong></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Akira slowly turned around.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">His adventure had just begun.</p>
+<hr class="my-6 border-[var(--border-color)]" />
+<h2 id="heading-51-4-character-power-system" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>⚔️ 4. Character Power System</span>
+          <a href="#heading-51-4-character-power-system" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">Every character in this universe has unique abilities and a personal growth journey.</p>
+<div class="my-6 w-full overflow-x-auto rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] shadow-xs ">
+            <table class="w-full border-collapse text-left text-sm text-[var(--text-main)]">
+              <tbody>
+                <tr>
+                    <th class="border border-[var(--border-color)] bg-[var(--bg-muted)]/60 px-4 py-2.5 font-semibold text-[var(--text-main)] text-xs sm:text-sm tracking-tight">Power Type</th><th class="border border-[var(--border-color)] bg-[var(--bg-muted)]/60 px-4 py-2.5 font-semibold text-[var(--text-main)] text-xs sm:text-sm tracking-tight">Description</th>
+                  </tr><tr>
+                    <td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">🔥 Elemental</td><td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">Fire, water, ice, lightning</td>
+                  </tr><tr>
+                    <td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">👁️ Spiritual</td><td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">Observation and awareness</td>
+                  </tr><tr>
+                    <td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">💪 Physical</td><td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">Strength, speed, endurance</td>
+                  </tr><tr>
+                    <td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">🌌 Mystic</td><td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">Ancient and supernatural abilities</td>
+                  </tr><tr>
+                    <td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">👑 Legendary</td><td class="border border-[var(--border-color)] px-4 py-2.5 text-[var(--text-main)] text-xs sm:text-sm leading-relaxed">Rare powers possessed by exceptional warriors</td>
+                  </tr>
+              </tbody>
+            </table>
           </div>
-          <pre class="soul-code-pre"><code class="language-markdown"># Main Document Title (H1)
-
-This is a standard paragraph. Leave a blank line between paragraphs to separate them properly. 
-To create a line break within the same paragraph, end a line with two spaces.  
-Here is the next line.
-
-## Text Formatting (H2)
-
-You can style text using asterisks, underscores, or tildes:
-* **Bold text** uses double asterisks or double underscores.
-* *Italic text* uses single asterisks or single underscores.
-* ***Bold and italic*** uses three asterisks.
-* ~~Strikethrough~~ uses double tildes.
-* `Inline code` uses single backticks.
-
-### Lists &amp; Tasks (H3)
-
-**Unordered List:**
-* First item
-* Second item
-  * Indented sub-item (indent with 2 or 4 spaces)
-
-**Ordered List:**
-1. Step one
-2. Step two
-3. Step three
-
-**Task List (GitHub Flavored Markdown):**
-- [x] Completed task
-- [ ] Pending task
-
-## Links, Images &amp; Blockquotes
-
-* **Link:** [Visit the Markdown Guide](https://www.markdownguide.org)
-* **Image:** ![Alt text for image](https://placeholder.com &quot;Optional Hover Title&quot;)
-
-&gt; **Blockquote:** Use a greater-than symbol to highlight quotes or callouts.
-&gt;&gt; Nested quotes use two symbols.
-
----
-
-## Code Block &amp; Table
-
-```python
-# Fenced code block with syntax highlighting
-def greet(name):
-    return f&quot;Hello, {name}!&quot;
-```
-
-| Feature | Syntax | Status |
-| :--- | :---: | ---: |
-| Headings | `#` to `######` | Supported |
-| Tables | `\|` and `-` | Supported |
-| Horizontal Rule | `---` | Supported |
-
-</code></pre>
-        </div>
-<h3 id="heading-11-how-the-for-loop-works" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
-          <span><strong>How the </strong><code class="px-1.5 py-0.5 rounded-[4px] text-[0.85em] font-mono font-medium bg-[#878378]/15 dark:bg-[#878378]/25 text-[#eb5757] dark:text-[#ff7369]">for</code><strong> loop works</strong></span>
-          <a href="#heading-11-how-the-for-loop-works" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+<h3 id="heading-54-character-progression" class="text-lg sm:text-xl font-semibold mt-6 mb-2 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>Character Progression</span>
+          <a href="#heading-54-character-progression" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
             <i data-lucide="hash" class="h-4 w-4 inline"></i>
           </a>
         </h3>
+<ol class="list-decimal pl-6 space-y-1.5 my-3 text-[var(--text-main)]">
+<li class="">🌱 Beginner – Discover your abilities.</li>
+<li class="">⚔️ Warrior – Master basic combat.</li>
+<li class="">🔥 Elite – Unlock advanced techniques.</li>
+<li class="">👑 Legend – Become a world-class fighter.</li>
+<li class="">🌌 Mythical – Transcend ordinary limitations.</li>
+</ol>
+<hr class="my-6 border-[var(--border-color)]" />
+<h2 id="heading-61-5-my-world-building-checklist" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>🎯 5. My World-Building Checklist</span>
+          <a href="#heading-61-5-my-world-building-checklist" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Design the world map.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Create seven unique kingdoms.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Develop the main protagonist.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Design legendary characters.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Create a unique power system.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Write the history of the ancient world.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Develop the main villain.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Connect characters through meaningful stories.</span>
+        </div>
+<div class="flex items-start gap-2.5 my-1.5 text-[var(--text-main)] text-sm ">
+          <input type="checkbox" disabled  class="mt-1 h-4 w-4 rounded border-[var(--border-color)] bg-[var(--bg-card)] text-indigo-600" />
+          <span class="">Create the first major adventure arc.</span>
+        </div>
+<hr class="my-6 border-[var(--border-color)]" />
+<h2 id="heading-72-final-thoughts" class="text-xl sm:text-2xl font-bold mt-7 mb-3 tracking-tight text-[var(--text-main)] group flex items-center gap-2 ">
+          <span>✨ Final Thoughts</span>
+          <a href="#heading-72-final-thoughts" class="opacity-0 group-hover:opacity-60 text-[var(--text-muted)] hover:text-[var(--text-main)] text-sm no-underline transition-opacity" aria-label="Permalink">
+            <i data-lucide="hash" class="h-4 w-4 inline"></i>
+          </a>
+        </h2>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">A great fictional world isn&#039;t built only through powerful characters. It&#039;s built through meaningful stories, unforgettable adventures, mysterious locations, and characters with dreams worth fighting for.</p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] "><strong>Your imagination is the only limit.</strong></p>
+<p class="leading-relaxed my-3 text-[var(--text-main)] ">🌊 <em>Set sail. Discover the unknown. Create your legend.</em></p>
 
       </article>
 
